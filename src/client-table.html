@@ -1,0 +1,37 @@
+<div class="vue-table-wrapper">
+<div class="row">
+<div class="col-md-6">
+<div class="form-group form-inline pull-left vue-table-search">
+<label>{{texts.filter}}</label>
+	<input class="form-control" type="text" name="vue-search" placeholder="{{texts.filterPH}}" @keyup="setPage(1)" v-model="query">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group form-inline pull-right vue-limit">
+ <label>{{texts.limit}}</label>
+ <select class="form-control" v-model="limit" name="{{filterPH}}" @change="setPage(1)" >
+ 	<option v-for="length in lengths">{{length}}</option>
+ </select>
+ </div>
+</div>
+</div>
+
+	<table class="vue-table table table-striped">
+				<thead>
+					<th @click="orderByColumn(cols[$index])" v-for="col in cols"><span class='vue-table-heading'>{{getHeading(col)}}</span><i class="vue-table-sort-icon text-muted fa" v-bind:class="orderClass($index)"></i></th>
+				</thead>
+				<tbody>
+					<tr v-for="row in $parent.tableData | filterBy query | orderBy orderBy ascending | setCount |  page " track-by="id">
+							<td v-for="column in cols" v-html="row[column]"></td>
+					</tr>
+				</tbody>
+
+	</table>
+
+<ul class="pagination vue-table-pagination" v-show="totalPages>1">
+  <li v-for="page in totalPages" v-bind:class="active($index)"><a href="#" @click="setPage($index+1)">{{$index +1}}</a></li>
+
+</ul>
+
+<p>{{displayText(texts.count, count)}}</p>
+</div>

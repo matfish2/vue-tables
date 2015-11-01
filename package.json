@@ -1,0 +1,28 @@
+{
+  "name": "vue-table",
+  "description": "Craete server- or client-side bootstrap tables",
+  "version": "0.0.1",
+  "keywords": [
+    "vue",
+    "bootstrap",
+    "tables"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cevio/webservice"
+  },
+  "files": [
+    "src",
+    "build"
+  ],
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "main": "./build/vue-table.js"
+}
