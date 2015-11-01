@@ -24,29 +24,29 @@ import the script which lies in `./build/vue-table-min.js` to your HTML.
 Add the following element to your page wherever you want it to render
 Make sure to wrap it with a parent element you can latch you vue instace into.
 
-  <div id="people">
+  `<div id="people">
     <v-client-table></v-client-table>
-  </div>
+  </div>`
 
 Create a new Vue instance. An example works best to illustrate the syntax:
 
-  new Vue({
-    el:"#people",
-    data: {
-      tableData: [
-        {id:1, name:"John",age:"20"},
-        {id:2, name:"Jane",age:"24"},
-        {id:3, name:"Susan",age:"16"},
-        {id:4, name:"Chris",age:"55"},
-        {id:5, name:"Dan",age:"40"}
-      ],
-      headings: {
-        id:'ID',
-        name:'Name',
-        age:'Age'
+    new Vue({
+      el:"#people",
+      data: {
+        tableData: [
+          {id:1, name:"John",age:"20"},
+          {id:2, name:"Jane",age:"24"},
+          {id:3, name:"Susan",age:"16"},
+          {id:4, name:"Chris",age:"55"},
+          {id:5, name:"Dan",age:"40"}
+        ],
+        headings: {
+          id:'ID',
+          name:'Name',
+          age:'Age'
+        }
       }
-    }
-  });
+    });
 
   Note: you must pass an `id` field as it is used to track the data for faster rendering.
   Of course you don't have to show it. See below the `columns` option.
@@ -64,8 +64,8 @@ Create a new Vue instance. An example works best to illustrate the syntax:
       }
     });
 
-    All the data is passed as GET parameters.
-    You need to return JSON encoded associative array of two items: `data` and `count`. Here is an implemenation in Laravel:
+  All the data is passed as GET parameters.
+  You need to return JSON encoded associative array of two items: `data` and `count`. Here is an implemenation in Laravel:
 
     extract(Input::all());
 
