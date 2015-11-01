@@ -53,16 +53,16 @@ Create a new Vue instance. An example works best to illustrate the syntax:
 
 ## Server side
 
-  new Vue({
-      el:"#people",
-      url:"/people"
-        headings: {
-          id:'ID',
-          name:'Name',
-          age:'Age'
+    new Vue({
+        el:"#people",
+        url:"/people"
+          headings: {
+            id:'ID',
+            name:'Name',
+            age:'Age'
+          }
         }
-      }
-    });
+      });
 
   All the data is passed as GET parameters.
   You need to return JSON encoded associative array of two items: `data` and `count`. Here is an implemenation in Laravel:
