@@ -53,6 +53,14 @@ Create a new Vue instance. An example works best to illustrate the syntax:
 
 ## Server side
 
+HTML:
+
+    `<div id="people">
+      <v-server-table></v-server-table>
+    </div>`
+
+Javascript:
+
     new Vue({
         el:"#people",
         url:"/people"
