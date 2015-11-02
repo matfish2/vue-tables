@@ -1,6 +1,6 @@
 {
-  "name": "vue-table",
-  "description": "Craete server- or client-side bootstrap tables",
+  "name": "vue-tables",
+  "description": "Create server- or client-side bootstrap data tables",
   "version": "0.0.1",
   "keywords": [
     "vue",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cevio/webservice"
+    "url": "https://github.com/matfish2/vue-tables"
   },
   "files": [
     "src",
@@ -24,5 +24,5 @@
       "type": "MIT"
     }
   ],
-  "main": "./build/vue-table.js"
+  "main": "./build/vue-tables.min.js"
 }

@@ -24,9 +24,9 @@ import the script which lies in `./build/vue-table-min.js` to your HTML.
 Add the following element to your page wherever you want it to render.
 Make sure to wrap it with a parent element you can latch you vue instance into.
 
-  `<div id="people">
-    <v-client-table></v-client-table>
-  </div>`
+    <div id="people">
+      <v-client-table></v-client-table>
+    </div>
 
 Create a new Vue instance. An example works best to illustrate the syntax:
 
@@ -55,9 +55,9 @@ Create a new Vue instance. An example works best to illustrate the syntax:
 
 HTML:
 
-    `<div id="people">
+    <div id="people">
       <v-server-table></v-server-table>
-    </div>`
+    </div>
 
 Javascript:
 
