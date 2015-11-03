@@ -22,7 +22,7 @@ import the script which lies in `./build/vue-table-min.js` to your HTML.
 ## Client Side
 
 Add the following element to your page wherever you want it to render.
-Make sure to wrap it with a parent element you can latch you vue instance into.
+Make sure to wrap it with a parent element you can latch your vue instance into.
 
     <div id="people">
       <v-client-table></v-client-table>
