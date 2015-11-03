@@ -4,10 +4,6 @@ This Vue component offers an easy and intuitive way of creating and displaying d
 It includes all the usual features: a search field, limit select, total records, sorting and pagination.
 The Styling is based on Bootstrap, but of course you can write your own.
 
-# Install
-
-Just grab the minified javascript file from the `build` folder
-
 # Dependencies
 
 * Bootstrap (CSS). Optional.
@@ -102,14 +98,12 @@ Javascript:
 
 ## Options
 
-`columns`
-`Array`
+`columns`  `Array`
 
-by default all columns passed as data will be displayed.
+By default all columns passed as data will be displayed.
 If you want to set explicitly which columns will show use this option.
 
-`templates`
-`Object`
+`templates`  `Object`
 
 Use this to wrap your cell content with a template using wildcards:
 
@@ -117,10 +111,9 @@ Use this to wrap your cell content with a template using wildcards:
       name:"<a href='{id}'>{name}</a>"
     }
 
-`extras`
-`Object`
+`extras`  `Object`
 
-similar to templates, but adds extra column(s). For example:
+Similar to templates, but adds extra column(s). For example:
 
     extras: {
       edit:"<a href='{id}'>{name}</a>"
