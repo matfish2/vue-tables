@@ -1,7 +1,7 @@
 {
-  "name": "vue-tables",
+  "name": "local-vue-tables",
   "description": "Create server- or client-side bootstrap data tables",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "keywords": [
     "vue",
     "bootstrap",
@@ -12,17 +12,20 @@
     "url": "https://github.com/matfish2/vue-tables"
   },
   "files": [
-    "src",
-    "build"
+    "lib"
   ],
   "engine-strict": true,
   "engines": {
-    "node": ">= 0.12"
+    "node": "*"
   },
   "licenses": [
     {
       "type": "MIT"
     }
   ],
-  "main": "./build/vue-tables.min.js"
+  "main": "index.js",
+  "scripts": {
+    "build-min": "browserify -t stringify index.js --s VueTables | uglifyjs -c > dist/vue-tables.min.js"
+  }
+
 }

@@ -11,9 +11,26 @@ The Styling is based on Bootstrap, but of course you can write your own.
 * JQuery. Required only for the server component.
 * Vue.js. Required.
 
+# Installation
+
+## Option 1
+
+  npm install vue-tables
+
+require the script:
+
+  var VueTables = require('vue-tables');
+
+## Option 2
+
+Simply include the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-table.min.js) and will expose the same global `VueTables` variable.
+
 # Usage
 
-import the script which lies in `./build/vue-table-min.js` to your HTML.
+## Register the component(s)
+
+  Vue.use(VueTables.client);
+  Vue.use(VueTables.server);
 
 ## Client Side
 
