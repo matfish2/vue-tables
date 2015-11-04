@@ -13,7 +13,17 @@ The Styling is based on Bootstrap, but of course you can write your own.
 
 # Installation
 
-Simply include the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-tables.min.js) which will expose the global `VueTables` variable.
+## Option 1
+
+    npm install vue-tables
+
+require the script:
+
+    var VueTables = require('vue-tables');
+
+## Option 2
+
+Simply include the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-tables.min.js) which will expose the same global `VueTables` variable.
 
 # Usage
 
