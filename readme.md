@@ -19,7 +19,7 @@ The Styling is based on Bootstrap, but of course you can write your own.
 
 require the script:
 
-   var VueTables = require('vue-tables');
+    var VueTables = require('vue-tables');
 
 ## Option 2
 
