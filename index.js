@@ -1,2 +1,2 @@
-exports.server = require('./lib/v-client-table');
-exports.client = require('./lib/v-server-table');
+exports.client = require('./lib/v-client-table');
+exports.server = require('./lib/v-server-table');
