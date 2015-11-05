@@ -6,10 +6,10 @@ The Styling is based on Bootstrap, but of course you can write your own.
 
 # Dependencies
 
+* JQuery. Required.
+* Vue.js. Required.
 * Bootstrap (CSS). Optional.
 * Font Awesome (for the sort icons). Optional.
-* JQuery. Required only for the server component.
-* Vue.js. Required.
 
 # Installation
 
