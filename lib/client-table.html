@@ -3,7 +3,7 @@
 <div class="col-md-6">
 <div class="form-group form-inline pull-left vue-table-search">
 <label>{{texts.filter}}</label>
-	<input class="form-control" type="text" name="vue-search" placeholder="{{texts.filterPH}}" @keyup="setPage(1)" v-model="query">
+	<input class="form-control" type="text" name="vue-search" placeholder="{{texts.filterPlaceholder}}" @keyup="setPage(1)" v-model="query">
 </div>
 </div>
 <div class="col-md-6">
@@ -18,7 +18,7 @@
 
 	<table class="vue-table table table-striped">
 				<thead>
-					<th @click="orderByColumn(cols[$index])" v-for="col in cols"><span class='vue-table-heading'>{{getHeading(col)}}</span><i class="vue-table-sort-icon text-muted fa" v-bind:class="orderClass($index)"></i></th>
+					<th @click="orderByColumn(cols[$index])" v-for="col in cols"><span class="vue-table-heading">{{getHeading(col)}}</span><i class="vue-table-sort-icon text-muted fa" v-bind:class="orderClass($index)"></i></th>
 				</thead>
 				<tbody>
 					<tr v-for="row in $parent.tableData | filterBy query | orderBy orderBy ascending | setCount |  page " track-by="id">
@@ -29,7 +29,7 @@
 	</table>
 
 <ul class="pagination vue-table-pagination" v-show="totalPages>1">
-  <li v-for="page in totalPages" v-bind:class="active($index)"><a href="#" @click="setPage($index+1)">{{$index +1}}</a></li>
+  <li v-for="page in totalPages" v-bind:class="active($index)"><a href="javascript:void(0);" @click="setPage($index+1)">{{$index +1}}</a></li>
 
 </ul>
 

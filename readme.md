@@ -27,7 +27,7 @@ Simply import the [compiled standalone file](https://raw.githubusercontent.com/m
 
 # Usage
 
-## Register the components
+## Register the component(s)
 
     Vue.use(VueTables.client);
     Vue.use(VueTables.server);
@@ -64,7 +64,7 @@ Create a new Vue instance. An example works best to illustrate the syntax:
   Note: you must pass an `id` field as it is used to track the data for faster rendering.
   Of course you don't have to show it. See below the `columns` option.
 
-  [View Demo on JSFiddle](https://jsfiddle.net/matfish2/tgp2vrh5/)
+  [Check out the live demo](https://jsfiddle.net/matfish2/tgp2vrh5/)
 
 ## Server side
 
