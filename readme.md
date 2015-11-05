@@ -1,6 +1,6 @@
 # Vue Tables
 
-This Vue component offers an easy and intuitive way of creating and displaying data tables with data coming for the client or from the server using AJAX requests.
+This Vue component offers an easy and intuitive way of creating and displaying data tables with data coming from the client or from the server using AJAX requests.
 It includes all the usual features: a search field, limit select, total records, sorting and pagination.
 The Styling is based on Bootstrap, but of course you can write your own.
 
@@ -17,17 +17,17 @@ The Styling is based on Bootstrap, but of course you can write your own.
 
     npm install vue-tables
 
-require the script:
+Require the script:
 
     var VueTables = require('vue-tables');
 
 ## Option 2
 
-Simply include the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-tables.min.js) which will expose the same global `VueTables` variable.
+Simply import the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-tables.min.js) into your HTML, which will expose a global `VueTables` variable.
 
 # Usage
 
-## Register the component(s)
+## Register the components
 
     Vue.use(VueTables.client);
     Vue.use(VueTables.server);
@@ -63,6 +63,8 @@ Create a new Vue instance. An example works best to illustrate the syntax:
 
   Note: you must pass an `id` field as it is used to track the data for faster rendering.
   Of course you don't have to show it. See below the `columns` option.
+
+  [View Demo on JSFiddle](https://jsfiddle.net/matfish2/tgp2vrh5/)
 
 ## Server side
 
@@ -137,4 +139,4 @@ Similar to templates, but adds extra column(s). For example:
     }
 
 
-Note: to center the pagination add `text-align:center` to the wrapping element
+Note: to center the pagination apply `text-align:center` to the wrapping element
