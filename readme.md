@@ -138,5 +138,16 @@ Similar to templates, but adds extra column(s). For example:
       edit:"<a href='{id}'>{name}</a>"
     }
 
+`texts`  `Object`
+
+This option allows you to override the defaults texts for localization or otherwise. It defaults to:
+
+    texts:{
+      count:"{count} Records",
+      filter:"Filter Results:",
+      filterPlaceholder:"Search query",
+      limit:"Records:"
+    }
+
 
 Note: to center the pagination apply `text-align:center` to the wrapping element
