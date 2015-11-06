@@ -149,5 +149,9 @@ This option allows you to override the defaults texts for localization or otherw
       limit:"Records:"
     }
 
+`sortable` `Array`
+
+By Default all columns but extras are sortable. Use this option to explicitly state which columns should be sortable.
+For obvious reasons server-side extras cannot be sortable.
 
 Note: to center the pagination apply `text-align:center` to the wrapping element
