@@ -96,7 +96,7 @@ Javascript:
 
     $direction = $ascending==1?"ASC":"DESC";
 
-    $people = App\People::select($fields);
+    $people = Person::select($fields);
 
     if ($query) {
       foreach ($fields as $index=>$field) {
@@ -149,9 +149,31 @@ This option allows you to override the defaults texts for localization or otherw
       limit:"Records:"
     }
 
-`sortable` `Array`
+`sortable`  `Array`
 
 By Default all columns but extras are sortable. Use this option to explicitly state which columns should be sortable.
-For obvious reasons server-side extras cannot be sortable.
+For obvious reasons server-side extras cannot be sorted.
+
+`dateFormat`  `String` (client-side only)
+
+When passing dates to the client-side component pass a `Date` object rather than a plain string.
+
+This results in two benefits:
+
+1. The dates are correctly sorted.
+2. You are not hardcoding the format into each date property.
+
+By default date will be presented using the native `toLocaleDateString()` function.
+To override this behaviour specify your format:
+
+{
+    dateFormat: "M-Y" // e.g "11-2015"
+}
+
+The convenctions are:
+
+"d", "m" - no preceding zeros.
+"D", "M" - include preceding zero.
+"Y", "y" - full year
 
 Note: to center the pagination apply `text-align:center` to the wrapping element
