@@ -173,8 +173,11 @@ To override this behaviour specify your format:
 
 The convenctions are:
 
-"d", "m" - no preceding zeros.
-"D", "M" - include preceding zero.
-"Y", "y" - full year
+"d", "m" - no preceding zero for a value less than 10.
 
+"D", "M" - include preceding zero.
+
+"Y" or "y" - full year
+
+-----------------
 Note: to center the pagination apply `text-align:center` to the wrapping element
