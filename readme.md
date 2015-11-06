@@ -163,12 +163,13 @@ This results in two benefits:
 1. The dates are correctly sorted.
 2. You are not hardcoding the format into each date property.
 
+
 By default date will be presented using the native `toLocaleDateString()` function.
 To override this behaviour specify your format:
 
-{
-    dateFormat: "M-Y" // e.g "11-2015"
-}
+    {
+        dateFormat: "M-Y" // e.g "11-2015"
+    }
 
 The convenctions are:
 
