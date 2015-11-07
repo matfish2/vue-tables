@@ -177,27 +177,28 @@ To override this behaviour specify your own format:
 
 The conventions are:
 
-Date:
-
-`d` - Day without leading zeros.
-
-`D` - Day including leading zeros.
-
-`m` - Month without leading zeros.
-
-`M` - Month with leading zeros
+- Date:
 
 `Y` or `y` - full year
 
-Time (separate from date by a single space):
+`M` - Month with leading zeros
 
-`g` - 12-hour format of an hour without leading zeros
+`m` - Month without leading zeros.
 
-`G` - 24-hour format of an hour without leading zeros
+`D` - Day with leading zeros.
+
+`d` - Day without leading zeros.
+
+
+- Time (separate from date by a single space):
+
+`H` - 24-hour format of an hour with leading zeros  00 through 23
 
 `h` -  12-hour format of an hour with leading zeros  01 through 12
 
-`H` - 24-hour format of an hour with leading zeros  00 through 23
+`G` - 24-hour format of an hour without leading zeros
+
+`g` - 12-hour format of an hour without leading zeros
 
 `i` -  Minutes with leading zeros
 
@@ -205,7 +206,7 @@ Time (separate from date by a single space):
 
 Spearators:
 
-Date: `-`,`.`,`/`
+Date: `-`, `.` , `/`
 Time : `:`
 
 If an invalid format was passed it will resort to the default format and spit out a warning to the console.
