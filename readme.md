@@ -181,7 +181,7 @@ Date:
 
 `m` - Month without leading zeros.
 
-`M' - Month with leading zeros
+`M` - Month with leading zeros
 
 `Y` or `y` - full year
 
