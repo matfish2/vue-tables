@@ -68,8 +68,6 @@ Create a new Vue instance. An example works best to illustrate the syntax:
 
 ## Server side
 
-HTML:
-
     <div id="people">
       <v-server-table></v-server-table>
     </div>
@@ -129,7 +127,7 @@ For obvious reasons server-side extras cannot be sorted.
 
 * `limit`  `number`
 
-The default limit is set to 10. The options are [5,10,20,50]
+Default limit is set to 10. The options are 5,10,20,50.
 
 * `templates`  `Object`
 
@@ -158,6 +156,10 @@ This option allows you to override the defaults texts for localization or otherw
       limit:"Records:"
     }
 
+* `dropdownPagination`  `boolean`
+
+For large sets of data you can set this option to `true` to use a dropdown select pagination next to the records-per-page list, instead of links at the bottom of the table.
+
 * `dateFormat`  `string` (client-side only)
 
 When passing dates to the client-side component pass a `Date` object rather than a plain string.
@@ -166,7 +168,6 @@ This results in two benefits:
 
 1. Dates are always correctly sorted regardless of their presentation.
 2. You are not hardcoding the format into each date property.
-
 
 By default date will be presented using the native `toLocaleDateString()` function.
 To override this behaviour specify your own format:
@@ -177,7 +178,7 @@ To override this behaviour specify your own format:
 
 The conventions are:
 
-- Date:
+#### Date:
 
 `Y` or `y` - full year
 
@@ -190,7 +191,7 @@ The conventions are:
 `d` - Day without leading zeros.
 
 
-- Time (separate from date by a single space):
+#### Time (separate from date by a single space):
 
 `H` - 24-hour format of an hour with leading zeros  00 through 23
 
