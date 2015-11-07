@@ -153,7 +153,8 @@ This option allows you to override the defaults texts for localization or otherw
       count:"{count} Records",
       filter:"Filter Results:",
       filterPlaceholder:"Search query",
-      limit:"Records:"
+      limit:"Records:",
+      page:"Page:" // for dropdown pagination
     }
 
 * `dropdownPagination`  `boolean`
