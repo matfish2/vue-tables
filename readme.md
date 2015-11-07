@@ -176,18 +176,27 @@ The conventions are:
 Date:
 
 `d` - Day without leading zeros.
+
 `D` - Day including leading zeros.
+
 `m` - Month without leading zeros.
+
 `M' - Month with leading zeros
+
 `Y` or `y` - full year
 
 Time (separate from date by a single space):
 
 `g` - 12-hour format of an hour without leading zeros
+
 `G` - 24-hour format of an hour without leading zeros
+
 `h` -  12-hour format of an hour with leading zeros  01 through 12
+
 `H` - 24-hour format of an hour with leading zeros  00 through 23
+
 `i` -  Minutes with leading zeros
+
 `s` - Seconds, with leading zeros
 
 Spearators:
