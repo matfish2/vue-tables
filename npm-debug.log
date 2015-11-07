@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.3.6
+3 info using node@v5.0.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/matanya/Sites/vue-tables/resources/assets/js',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/matanya/.npm/vue-tables/0.2.2/package.tgz not in flight; packing
+9 info lifecycle vue-tables@0.2.2~prepublish: vue-tables@0.2.2
+10 silly lifecycle vue-tables@0.2.2~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/Users/matanya/.npm/vue-tables/0.2.2/package.tgz',
+11 verbose tar pack   '/Users/matanya/Sites/vue-tables/resources/assets/js' ]
+12 verbose tarball /Users/matanya/.npm/vue-tables/0.2.2/package.tgz
+13 verbose folder /Users/matanya/Sites/vue-tables/resources/assets/js
+14 verbose addLocalTarball adding from inside cache /Users/matanya/.npm/vue-tables/0.2.2/package.tgz
+15 silly cache afterAdd vue-tables@0.2.2
+16 verbose afterAdd /Users/matanya/.npm/vue-tables/0.2.2/package/package.json not in flight; writing
+17 verbose afterAdd /Users/matanya/.npm/vue-tables/0.2.2/package/package.json written
+18 silly publish { name: 'vue-tables',
+18 silly publish   description: 'Create server- or client-side bootstrap data tables',
+18 silly publish   version: '0.2.2',
+18 silly publish   keywords: [ 'vue', 'bootstrap', 'tables' ],
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/matfish2/vue-tables.git' },
+18 silly publish   files: [ 'lib' ],
+18 silly publish   'engine-strict': true,
+18 silly publish   engines: { node: '*' },
+18 silly publish   licenses: [ { type: 'MIT' } ],
+18 silly publish   main: 'index.js',
+18 silly publish   scripts: { 'build-min': 'browserify -t stringify index.js --s VueTables | uglifyjs -c > dist/vue-tables.min.js' },
+18 silly publish   readme: '# Vue Tables\n\nThis Vue component offers an easy and intuitive way of creating and displaying data tables with data coming from the client or from the server using AJAX requests.\nIt includes all the usual features: a search field, limit select, total records, sorting and pagination.\nThe Styling is based on Bootstrap, but of course you can write your own.\n\n# Dependencies\n\n* JQuery. Required.\n* Vue.js. Required.\n* Bootstrap (CSS). Optional.\n* Font Awesome (for the sort icons). Optional.\n\n# Installation\n\n## Option 1\n\n    npm install vue-tables\n\nRequire the script:\n\n    var VueTables = require(\'vue-tables\');\n\n## Option 2\n\nSimply import the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-tables.min.js) into your HTML, which will expose a global `VueTables` variable.\n\n# Usage\n\n## Register the component(s)\n\n    Vue.use(VueTables.client);\n    Vue.use(VueTables.server);\n\n## Client Side\n\nAdd the following element to your page wherever you want it to render.\nMake sure to wrap it with a parent element you can latch your vue instance into.\n\n    <div id="people">\n      <v-client-table></v-client-table>\n    </div>\n\nCreate a new Vue instance. An example works best to illustrate the syntax:\n\n    new Vue({\n      el:"#people",\n      data: {\n        tableData: [\n          {id:1, name:"John",age:"20"},\n          {id:2, name:"Jane",age:"24"},\n          {id:3, name:"Susan",age:"16"},\n          {id:4, name:"Chris",age:"55"},\n          {id:5, name:"Dan",age:"40"}\n        ],\n        headings: {\n          id:\'ID\',\n          name:\'Name\',\n          age:\'Age\'\n        }\n      }\n    });\n\n  Note: you must pass an `id` field as it is used to track the data for faster rendering.\n  Of course you don\'t have to show it. See below the `columns` option.\n\n  [Check out the live demo](https://jsfiddle.net/matfish2/tgp2vrh5/)\n\n## Server side\n\nHTML:\n\n    <div id="people">\n      <v-server-table></v-server-table>\n    </div>\n\nJavascript:\n\n    new Vue({\n        el:"#people",\n        url:"/people"\n          headings: {\n            id:\'ID\',\n            name:\'Name\',\n            age:\'Age\'\n          }\n        }\n      });\n\n  All the data is passed as GET parameters.\n  You need to return JSON encoded associative array of two items: `data` and `count`. Here is an implemenation in Laravel:\n\n    extract(Input::all());\n\n    $fields = [\'id\',age\',\'name\'];\n\n    $direction = $ascending==1?"ASC":"DESC";\n\n    $people = Person::select($fields);\n\n    if ($query) {\n      foreach ($fields as $index=>$field) {\n        $method = $index?"orWhere":"where";\n        $people = $people->{$method}($field,\'LIKE\',"%{$query}%");\n      }\n\n    }\n\n    $count = $people->count();\n\n    $people->limit($limit)\n          ->skip($limit * ($page-1))\n          ->orderBy($orderBy,$direction);\n\n    return [\'data\'=>$people->get(),\n           \'count\'=>$count];\n\n## Options\n\n`columns`  `Array`\n\nBy default all columns passed as data will be displayed.\nIf you want to set explicitly which columns will show use this option.\n\n`templates`  `Object`\n\nUse this to wrap your cell content with a template using wildcards:\n\n    templates: {\n      name:"<a href=\'{id}\'>{name}</a>"\n    }\n\n`extras`  `Object`\n\nSimilar to templates, but adds extra column(s). For example:\n\n    extras: {\n      edit:"<a href=\'{id}\'>{name}</a>"\n    }\n\n`texts`  `Object`\n\nThis option allows you to override the defaults texts for localization or otherwise. It defaults to:\n\n    texts:{\n      count:"{count} Records",\n      filter:"Filter Results:",\n      filterPlaceholder:"Search query",\n      limit:"Records:"\n    }\n\n`sortable`  `Array`\n\nBy Default all columns but extras are sortable. Use this option to explicitly state which columns should be sortable.\nFor obvious reasons server-side extras cannot be sorted.\n\n`dateFormat`  `String` (client-side only)\n\nWhen passing dates to the client-side component pass a `Date` object rather than a plain string.\n\nThis results in two benefits:\n\n1. Dates are always correctly sorted regardless of their presentation.\n2. You are not hardcoding the format into each date property.\n\n\nBy default date will be presented using the native `toLocaleDateString()` function.\nTo override this behaviour specify your own format:\n\n    {\n        dateFormat: "M-Y" // e.g "11-2015"\n    }\n\nThe conventions are:\n\nDate:\n\n`d` - Day without leading zeros.\n\n`D` - Day including leading zeros.\n\n`m` - Month without leading zeros.\n\n`M` - Month with leading zeros\n\n`Y` or `y` - full year\n\nTime (separate from date by a single space):\n\n`g` - 12-hour format of an hour without leading zeros\n\n`G` - 24-hour format of an hour without leading zeros\n\n`h` -  12-hour format of an hour with leading zeros  01 through 12\n\n`H` - 24-hour format of an hour with leading zeros  00 through 23\n\n`i` -  Minutes with leading zeros\n\n`s` - Seconds, with leading zeros\n\nSpearators:\n\nDate: `-`,`.`,`/`\nTime : `:`\n\nIf an invalid format was passed it will resort to the default format and spit out a warning to the console.\n\n-----------------\nCSS Note: to center the pagination apply `text-align:center` to the wrapping element\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: 'bd510763113d1e6bf2998ddf3705badeffb0c7bf',
+18 silly publish   bugs: { url: 'https://github.com/matfish2/vue-tables/issues' },
+18 silly publish   homepage: 'https://github.com/matfish2/vue-tables#readme',
+18 silly publish   _id: 'vue-tables@0.2.2',
+18 silly publish   _shasum: 'e6d188c9e2889037f1fb5c486cbc697b99ddeced',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name vue-tables
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/vue-tables
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /Users/matanya/.npm/vue-tables/0.2.2/package.tgz
+26 verbose request uri https://registry.npmjs.org/vue-tables
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 1:36:47 PM
+29 verbose request using bearer token for auth
+30 verbose request id 0ba0df05dca05e8e
+31 http request PUT https://registry.npmjs.org/vue-tables
+32 http 403 https://registry.npmjs.org/vue-tables
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=60',
+33 verbose headers   'content-length': '95',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Sat, 07 Nov 2015 11:36:48 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-lcy1130-LCY',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1446896207.380973,VS0,VE1130' }
+34 verbose request invalidating /Users/matanya/.npm/registry.npmjs.org/vue-tables on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: "You cannot publish over the previously published version 0.2.2." : vue-tables
+36 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+36 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+36 verbose stack     at emitTwo (events.js:87:13)
+36 verbose stack     at Request.emit (events.js:172:7)
+36 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1063:14)
+36 verbose stack     at emitOne (events.js:82:20)
+36 verbose stack     at Request.emit (events.js:169:7)
+36 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+37 verbose statusCode 403
+38 verbose pkgid vue-tables
+39 verbose cwd /Users/matanya/Sites/vue-tables/resources/assets/js
+40 error Darwin 13.4.0
+41 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+42 error node v5.0.0
+43 error npm  v3.3.6
+44 error code E403
+45 error "You cannot publish over the previously published version 0.2.2." : vue-tables
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]
