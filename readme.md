@@ -117,12 +117,21 @@ Javascript:
 
 ## Options
 
-`columns`  `Array`
+* `columns`  `Array`
 
 By default all columns passed as data will be displayed.
 If you want to set explicitly which columns will show use this option.
 
-`templates`  `Object`
+* `sortable`  `Array`
+
+By Default all columns but extras are sortable. Use this option to explicitly state which columns should be sortable.
+For obvious reasons server-side extras cannot be sorted.
+
+* `limit`  `number`
+
+The default limit is set to 10. The options are [5,10,20,50]
+
+* `templates`  `Object`
 
 Use this to wrap your cell content with a template using wildcards:
 
@@ -130,7 +139,7 @@ Use this to wrap your cell content with a template using wildcards:
       name:"<a href='{id}'>{name}</a>"
     }
 
-`extras`  `Object`
+* `extras`  `Object`
 
 Similar to templates, but adds extra column(s). For example:
 
@@ -138,7 +147,7 @@ Similar to templates, but adds extra column(s). For example:
       edit:"<a href='{id}'>{name}</a>"
     }
 
-`texts`  `Object`
+* `texts`  `Object`
 
 This option allows you to override the defaults texts for localization or otherwise. It defaults to:
 
@@ -149,12 +158,7 @@ This option allows you to override the defaults texts for localization or otherw
       limit:"Records:"
     }
 
-`sortable`  `Array`
-
-By Default all columns but extras are sortable. Use this option to explicitly state which columns should be sortable.
-For obvious reasons server-side extras cannot be sorted.
-
-`dateFormat`  `String` (client-side only)
+* `dateFormat`  `string` (client-side only)
 
 When passing dates to the client-side component pass a `Date` object rather than a plain string.
 
