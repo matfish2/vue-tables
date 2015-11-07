@@ -160,24 +160,42 @@ When passing dates to the client-side component pass a `Date` object rather than
 
 This results in two benefits:
 
-1. The dates are correctly sorted.
+1. Dates are always correctly sorted regardless of their presentation.
 2. You are not hardcoding the format into each date property.
 
 
 By default date will be presented using the native `toLocaleDateString()` function.
-To override this behaviour specify your format:
+To override this behaviour specify your own format:
 
     {
         dateFormat: "M-Y" // e.g "11-2015"
     }
 
-The convenctions are:
+The conventions are:
 
-"d", "m" - no preceding zero for a value less than 10.
+Date:
 
-"D", "M" - include preceding zero.
+`d` - Day without leading zeros.
+`D` - Day including leading zeros.
+`m` - Month without leading zeros.
+`M' - Month with leading zeros
+`Y` or `y` - full year
 
-"Y" or "y" - full year
+Time (separate from date by a single space):
+
+`g` - 12-hour format of an hour without leading zeros
+`G` - 24-hour format of an hour without leading zeros
+`h` -  12-hour format of an hour with leading zeros  01 through 12
+`H` - 24-hour format of an hour with leading zeros  00 through 23
+`i` -  Minutes with leading zeros
+`s` - Seconds, with leading zeros
+
+Spearators:
+
+Date: `-`,`.`,`/`
+Time : `:`
+
+If an invalid format was passed it will resort to the default format and spit out a warning to the console.
 
 -----------------
-Note: to center the pagination apply `text-align:center` to the wrapping element
+CSS Note: to center the pagination apply `text-align:center` to the wrapping element
