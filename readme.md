@@ -157,9 +157,14 @@ This option allows you to override the defaults texts for localization or otherw
       page:"Page:" // for dropdown pagination
     }
 
-* `dropdownPagination`  `boolean`
+* `pagination`  `object`
 
-For large sets of data you can set this option to `true` to use a dropdown select pagination next to the records-per-page list, instead of links at the bottom of the table.
+  * `dropdown` `boolean`
+    For large sets of data you can set this option to `true` to use a dropdown select pagination next to the records-per-page list, instead of links at the bottom of the table.
+
+   * `chunk` `number`
+      By Default pagination links are presented in groups of 10, with navigation between the groups.
+      Use this option to set your own chunk size.
 
 * `dateFormat`  `string` (client-side only)
 
