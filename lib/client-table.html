@@ -8,7 +8,7 @@
 </div>
 <div class="col-md-6">
 
-<div v-if="$parent.dropdownPagination" class="form-group form-inline pull-right vue-select-pagination">
+<div v-if="$parent.pagination.dropdown" class="form-group form-inline pull-right vue-select-pagination">
  <label>{{texts.page}}</label>
   <select class="form-control" v-model="page" @change="setPage(page, 'client')">
  		<option v-for="page in totalPages">{{page+1}}</option>
@@ -39,7 +39,7 @@
 
 	</table>
 
-<ul v-if="$parent.dropdownPagination" class="pagination vue-table-pagination" v-show="totalPages>1">
+<ul v-if="$parent.pagination.dropdown" class="pagination vue-table-pagination" v-show="totalPages>1">
   <li v-for="page in totalPages" v-bind:class="active($index)"><a href="javascript:void(0);" @click="setPage($index+1,'client')">{{$index +1}}</a></li>
 
 </ul>
