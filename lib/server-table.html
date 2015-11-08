@@ -36,7 +36,7 @@
 				</tbody>
 
 	</table>
-{{pagination.chunk}}
+
 <ul v-show="totalPages>1" v-if="!pagination.dropdown" class="pagination vue-table-pagination">
   <li v-bind:class="disabled(-1)?'disabled':''"><a href="javascript:void(0);"  @click="!disabled(-1) && chunk(-1)"><<</a></li>
   <li v-for="page in pagination.chunk" v-if="paginationStart + $index <= totalPages" v-bind:class="active(paginationStart + $index - 1)"><a href="javascript:void(0);" @click="setPage(paginationStart + $index)">{{paginationStart + $index}}</a></li>
