@@ -31,7 +31,7 @@
 
 				<tbody>
 					<tr v-for="row in tableData">
-							<td v-for="column in cols" v-html="row[column]"></td>
+							<td v-for="column in cols" v-html="row[column] | render row column"></td>
 					</tr>
 				</tbody>
 

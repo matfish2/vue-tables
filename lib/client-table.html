@@ -31,7 +31,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="row in tableData | filterBy query | orderBy orderBy ascending | setCount |  page " track-by="id">
-							<td v-for="column in cols" v-html="row[column]"></td>
+							<td v-for="column in cols" v-html="row[column] | render row column | date"></td>
 					</tr>
 				</tbody>
 
