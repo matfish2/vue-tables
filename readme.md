@@ -122,8 +122,7 @@ If you want to set explicitly which columns will show use this option.
 
 * `sortable`  `Array`
 
-By Default all columns but extras are sortable. Use this option to explicitly state which columns should be sortable.
-For obvious reasons server-side extras cannot be sorted.
+By Default all columns (except extras) are sortable. Use this option to explicitly state which columns should be sortable.
 
 * `limit`  `number`
 
