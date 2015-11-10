@@ -43,7 +43,7 @@ Make sure to wrap it with a parent element you can latch your vue instance into.
 
 As the name implies the `options` prop is optional.
 
-Create a new Vue instance. An example works best to illustrate the syntax:
+Create a new Vue instance (You can also nest it within other components). An example works best to illustrate the syntax:
 
     new Vue({
       el:"#people",
@@ -81,7 +81,6 @@ Javascript:
     new Vue({
         el:"#people",
         data: {
-          url:"/people",
           options: {
             headings: {
               id:'ID',
@@ -121,6 +120,11 @@ Javascript:
            'count'=>$count];
 
 ## Options
+
+* `headings` `Object`
+
+By default the column names are determined by the properties.
+Use this to set custom headings.
 
 * `columns`  `Array`
 
