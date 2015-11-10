@@ -38,8 +38,10 @@ Add the following element to your page wherever you want it to render.
 Make sure to wrap it with a parent element you can latch your vue instance into.
 
     <div id="people">
-      <v-client-table></v-client-table>
+      <v-client-table :data="tableData" :options="options"></v-client-table>
     </div>
+
+As the name implies the `options` prop is optional.
 
 Create a new Vue instance. An example works best to illustrate the syntax:
 
@@ -53,10 +55,12 @@ Create a new Vue instance. An example works best to illustrate the syntax:
           {id:4, name:"Chris",age:"55"},
           {id:5, name:"Dan",age:"40"}
         ],
-        headings: {
-          id:'ID',
-          name:'Name',
-          age:'Age'
+        options: {
+             headings: {
+              id:'ID',
+              name:'Name',
+              age:'Age'
+          }
         }
       }
     });
@@ -69,20 +73,23 @@ Create a new Vue instance. An example works best to illustrate the syntax:
 ## Server side
 
     <div id="people">
-      <v-server-table></v-server-table>
+      <v-server-table url="/people" :options="options"></v-server-table>
     </div>
 
 Javascript:
 
     new Vue({
         el:"#people",
-        url:"/people"
-          headings: {
-            id:'ID',
-            name:'Name',
-            age:'Age'
-          }
-        }
+        data: {
+          url:"/people",
+          options: {
+            headings: {
+              id:'ID',
+              name:'Name',
+              age:'Age'
+            }
+         }
+      }
       });
 
   All the data is passed as GET parameters.
@@ -124,29 +131,22 @@ If you want to set explicitly which columns will show use this option.
 
 By Default all columns (except extras) are sortable. Use this option to explicitly state which columns should be sortable.
 
-* `limit`  `number`
+* `perPage`  `number`
 
-Default limit is set to 10. The options are 5,10,20,50.
+Default records-per-page are set to 10. Acceptable values are 5,10,20,50.
 
 * `templates`  `Object`
 
-Use this to wrap your cell content with a template using wildcards:
+Use this to wrap your cell content with a template using wildcards. You can also create new custom columns. e.g:
 
     templates: {
-      name:"<a href='{id}'>{name}</a>"
-    }
-
-* `extras`  `Object`
-
-Similar to templates, but adds extra column(s). For example:
-
-    extras: {
-      edit:"<a href='{id}'>{name}</a>"
+      name:"<b>{name}</b>",
+      edit:"<a href='{id}'><i class='fa fa-edit'></i></a>"
     }
 
 * `texts`  `Object`
 
-This option allows you to override the defaults texts for localization or otherwise. It defaults to:
+Override default texts for localization or otherwise. Defaults are:
 
     texts:{
       count:"{count} Records",
