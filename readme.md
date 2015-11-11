@@ -7,9 +7,9 @@ The Styling is based on Bootstrap, but of course you can write your own.
 # Dependencies
 
 * JQuery. Required.
-* Vue.js. Required.
+* Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
-* Font Awesome (for the sort icons). Optional.
+* Font Awesome (CSS for the sort icons). Optional.
 
 # Installation
 
