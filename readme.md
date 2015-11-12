@@ -157,6 +157,7 @@ Override default texts for localization or otherwise. Defaults are:
       filter:"Filter Results:",
       filterPlaceholder:"Search query",
       limit:"Records:",
+      noResults:"No matching records"
       page:"Page:" // for dropdown pagination
     }
 
