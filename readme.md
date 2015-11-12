@@ -123,7 +123,7 @@ Javascript:
 
 * `headings` `Object`
 
-By default the column names are determined by the properties.
+By default the column names are gleaned from the properties.
 Use this to set custom headings.
 
 * `columns`  `Array`
@@ -157,7 +157,7 @@ Override default texts for localization or otherwise. Defaults are:
       filter:"Filter Results:",
       filterPlaceholder:"Search query",
       limit:"Records:",
-      noResults:"No matching records"
+      noResults:"No matching records",
       page:"Page:" // for dropdown pagination
     }
 
