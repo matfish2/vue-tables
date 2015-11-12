@@ -32,6 +32,12 @@
 					<tr v-for="row in data | filterBy query | orderBy orderBy ascending | setCount |  page " track-by="id">
 							<td v-for="column in columns" v-html="row[column] | render row column | date"></td>
 					</tr>
+
+          <tr v-if="!count">
+            <td class="text-center" colspan="{{columns.length}}">
+              {{options.texts?options.texts.noResults:''}}
+            </td>
+          </tr>
 				</tbody>
 
 	</table>
@@ -44,6 +50,6 @@
   <li v-bind:class="disabled(1)?'disabled':''"><a href="javascript:void(0);" @click="!disabled(1) && chunk(1)">>></a></li>
 </ul>
 
-<p>{{display(countTemplate, count)}}</p>
+<p v-if="count">{{display(countTemplate, count)}}</p>
 </div>
 
