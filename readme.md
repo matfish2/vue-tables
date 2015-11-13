@@ -119,6 +119,8 @@ Javascript:
     return ['data'=>$people->get(),
            'count'=>$count];
 
+[Check out the live demo](http://ucantourit.co.il/vt-demo.php)
+
 ## Options
 
 * `headings` `Object`
@@ -224,3 +226,4 @@ If an invalid format was passed it will resort to the default format and spit ou
 
 -----------------
 CSS Note: to center the pagination apply `text-align:center` to the wrapping element
+
