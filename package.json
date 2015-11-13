@@ -12,7 +12,9 @@
     "url": "https://github.com/matfish2/vue-tables"
   },
   "files": [
-    "lib"
+    "lib",
+    "laravel",
+    "dist"
   ],
   "engine-strict": true,
   "engines": {
