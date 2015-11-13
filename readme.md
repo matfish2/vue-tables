@@ -105,7 +105,7 @@ Javascript:
     if ($query) {
       foreach ($fields as $index=>$field) {
         $method = $index?"orWhere":"where";
-        $people = $people->{$method}($field,'LIKE',"%{$query}%");
+        $people->{$method}($field,'LIKE',"%{$query}%");
       }
 
     }
@@ -117,14 +117,16 @@ Javascript:
           ->orderBy($orderBy,$direction);
 
     return ['data'=>$people->get(),
-           'count'=>$count];
+            'count'=>$count];
 
 
 I have included a `LaravelVueTables` class for Laravel users under `./server/PHP`.
 If you happen to add other implementions for PHP or other languages, a pull request would be most welcome, under the following guidelines:
 
 a. include the class under ./server/{language}
+
 b. if this is the first implementation in this language add an interface, similar to the one found in the PHP folder.
+
 c. TEST IT.
 
 [Check out the live demo](http://ucantourit.co.il/vt-demo.php)

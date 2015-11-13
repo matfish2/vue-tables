@@ -1,4 +1,4 @@
-<?php namespace Dataplus\DataTables;
+<?php
 
 Interface VueTablesInterface {
 

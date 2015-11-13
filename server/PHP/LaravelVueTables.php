@@ -38,7 +38,7 @@ Class LaravelVueTables implements VueTablesInterface  {
     $results = $data->get()->toArray();
 
     return ['data'=>$results,
-    'count'=>$count];
+            'count'=>$count];
 
   }
 
