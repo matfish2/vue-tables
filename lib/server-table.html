@@ -1,7 +1,7 @@
-<div class="VueTable">
+<div class="VueTables">
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group form-inline pull-left VueTable__search">
+      <div class="form-group form-inline pull-left VueTables__search">
         <label>{{display('filter')}}</label>
         <input class="form-control"
         type="text"
@@ -13,7 +13,7 @@
     <div class="col-md-6">
 
       <div v-if="options.pagination && options.pagination.dropdown"
-      class="form-group form-inline pull-right VueTable__dropdown-pagination">
+      class="form-group form-inline pull-right VueTables__dropdown-pagination">
       <label>{{display('page')}}</label>
       <select class="form-control"
       v-model="page"
@@ -22,7 +22,7 @@
     </select>
   </div>
 
-  <div class="form-group form-inline pull-right VueTable__limit">
+  <div class="form-group form-inline pull-right VueTables__limit">
    <label>{{display('limit')}}</label>
    <select class="form-control"
    v-model="limit" name="{{filterPlaceholder}}"
@@ -33,12 +33,12 @@
 </div>
 </div>
 
-<table class="VueTable__table table table-striped">
+<table class="VueTables__table table table-striped">
 
   <thead>
    <th @click="orderByColumn(column)"
-   v-for="column in columns"><span class="VueTable__heading">{{getHeading(column)}}</span>
-   <i class="VueTable__sort-icon text-muted fa"
+   v-for="column in columns"><span class="VueTables__heading">{{getHeading(column)}}</span>
+   <i class="VueTables__sort-icon text-muted fa"
    v-bind:class="orderClass(column)"></i></th>
  </thead>
 
@@ -48,8 +48,8 @@
      v-html="row[column] | render row column"></td>
    </tr>
 
-   <tr v-if="!count">
-    <td class="text-center"
+   <tr v-if="count==0">
+    <td class="VueTables__no-results text-center"
     colspan="{{columns.length}}">
     {{display('noResults')}}
   </td>
@@ -59,15 +59,15 @@
 
 <ul v-show="totalPages>1"
   v-if="options.pagination && !options.pagination.dropdown"
-  class="pagination VueTable__pagination">
+  class="pagination VueTables__pagination">
 
-  <li class="VueTable__pagination-item VueTable__pagination-item-prev"
+  <li class="VueTables__pagination-item VueTables__pagination-item-prev"
   v-bind:class="disabled(-1)?'disabled':''">
   <a href="javascript:void(0);"
   @click="!disabled(-1) && chunk(-1)"><<</a>
 </li>
 
-<li class="VueTable__pagination-item"
+<li class="VueTables__pagination-item"
 v-for="page in options.pagination.chunk"
 v-if="paginationStart + $index <= totalPages"
 v-bind:class="active(paginationStart + $index - 1)">
@@ -75,14 +75,14 @@ v-bind:class="active(paginationStart + $index - 1)">
 @click="setPage(paginationStart + $index)">{{paginationStart + $index}}</a>
 </li>
 
-<li class="VueTable__pagination-item VueTable__pagination-item-next"
+<li class="VueTables__pagination-item VueTables__pagination-item-next"
 v-bind:class="disabled(1)?'disabled':''">
 <a href="javascript:void(0);"
 @click="!disabled(1) && chunk(1)">>></a>
 </li>
 </ul>
 
-<p v-if="count"
-class="VueTable__count">{{display('count', count)}}</p>
+<p v-if="count!=0"
+class="VueTables__count">{{display('count', count)}}</p>
 
 </div>
