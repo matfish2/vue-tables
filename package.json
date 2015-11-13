@@ -13,7 +13,7 @@
   },
   "files": [
     "lib",
-    "laravel",
+    "server",
     "dist"
   ],
   "engine-strict": true,
