@@ -1,4 +1,4 @@
-<div class="VueTables">
+<div class="VueTables VueTables--server">
   <div class="row">
     <div class="col-md-6">
       <div class="form-group form-inline pull-left VueTables__search">
@@ -6,7 +6,7 @@
         <input class="form-control"
         type="text"
         placeholder="{{display('filterPlaceholder')}}"
-        @keyup="setPage(1)"
+        @keyup="search()"
         v-model="query">
       </div>
     </div>
