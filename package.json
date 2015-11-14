@@ -1,7 +1,7 @@
 {
   "name": "vue-tables",
   "description": "Create server- or client-side bootstrap data tables",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "keywords": [
     "vue",
     "bootstrap",

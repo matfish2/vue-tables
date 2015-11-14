@@ -89,26 +89,32 @@ Javascript:
       });
 
   All the data is passed in the following GET parameters: `query`,`limit`,`page`,`orderBy`,`ascending`.
-  You need to return a JSON-encoded associative array of two items:
+  You need to return a JSON object with two properties:
 
-  `data` - An array of objects with identical keys.
-  `count` - Total count before limit.
+  `data` `array` - An array of row objects with identical keys.
+
+  `count` `number` - Total count before limit.
 
   [Check out the live server-side demo, including a code sample](http://ucantourit.co.il/vt-demo.php)
+
+### Implementations
 
   I have included [an Eloquent implementation](https://github.com/matfish2/vue-tables/tree/master/server/PHP) for Laravel Users.
   If you happen to write other implementations for PHP or other languages, a pull request would be most welcome, under the following guidelines:
 
-    a. Include the class under `./server/{language}`.
+  a. Include the class under `./server/{language}`.
 
-    b. Name it according to convention: '{concrete}VueTables'.
+  b. Name it according to convention: `{concrete}VueTables`.
 
-    c. if this is the first implementation in this language add an interface, similar to the one found in the PHP folder.
+  c. if this is the first implementation in this language add an interface, similar to the one found in the PHP folder.
 
-    d. Have it implement the interface.
+  d. Have it implement the interface.
 
-    e. TEST IT.
+  e. TEST IT.
 
+----------------------
+
+Note: If your server requests are relatively slow you can latch a loading gif or animated CSS into the `.VueTables__loading-icon` element, which is conditionally added as a child of `.VueTables__search__input`.
 
 ## Options
 
@@ -168,6 +174,11 @@ Override default texts for localization or otherwise. Defaults are:
    * `chunk` `number`
       By Default pagination links are presented in groups of 10, with navigation between the groups.
       Use this option to set your own chunk size.
+
+* `delay` `number` (server-side only)
+
+In order to avoid redundant server requests and data rendering, a 300ms delay is set to detect when the user has ended his query.
+Use this option to set your own delay value. (e.g adapt the value to the average typing speed of your intended audience).
 
 * `dateFormat`  `string` (client-side only)
 
