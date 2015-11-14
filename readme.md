@@ -118,6 +118,8 @@ Options are set in three layers, where the more particular overrides the more ge
 2. Applicable user-defined defaults for the global Vue Instance. Passed as the second paramter to the `Use` statement.
 3. Options for a single table, passed through the `options` prop.
 
+----------------
+
 * `headings` `Object`
 
 By default the column names are gleaned from the properties.
