@@ -3,14 +3,14 @@
     <div class="col-md-6">
       <div class="form-group form-inline pull-left VueTables__search">
         <label>{{display('filter')}}</label>
-        <div class="VueTables__search__input">
+        <span class="VueTables__search__input">
          <input class="form-control"
          type="text"
          placeholder="{{display('filterPlaceholder')}}"
          @keyup="search()"
-         v-model="query">
+         v-model="query"/>
          <span v-if="loading" class="VueTables__loading-icon"></span>
-       </div>
+       </span>
      </div>
    </div>
    <div class="col-md-6">
