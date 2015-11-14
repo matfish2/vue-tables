@@ -2,6 +2,6 @@
 
 Interface VueTablesInterface {
 
-  public function get();
+  public function get($table, Array $fields);
 
 }

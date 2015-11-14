@@ -37,8 +37,8 @@
     <thead>
      <th @click="orderByColumn(column)"
      v-for="column in columns"><span class="VueTables__heading">{{getHeading(column)}}</span>
-     <i class="VueTables__sort-icon text-muted fa"
-     v-bind:class="orderClass(column)"></i>
+     <span class="VueTables__sort-icon glyphicon"
+     v-bind:class="orderClass(column)"></span>
    </th>
   </thead>
   <tbody>

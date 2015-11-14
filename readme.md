@@ -9,7 +9,6 @@ The Styling is based on Bootstrap, but of course you can write your own.
 * JQuery. Required.
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
-* Font Awesome (CSS for the sort icons). Optional.
 
 # Installation
 
@@ -29,8 +28,8 @@ Simply import the [compiled standalone file](https://raw.githubusercontent.com/m
 
 ## Register the component(s)
 
-    Vue.use(VueTables.client);
-    Vue.use(VueTables.server);
+    Vue.use(VueTables.client, options);
+    Vue.use(VueTables.server, options);
 
 ## Client Side
 
@@ -40,8 +39,6 @@ Make sure to wrap it with a parent element you can latch your vue instance into.
     <div id="people">
       <v-client-table :data="tableData" :options="options"></v-client-table>
     </div>
-
-As the name implies the `options` prop is optional.
 
 Create a new Vue instance (You can also nest it within other components). An example works best to illustrate the syntax:
 
@@ -68,7 +65,7 @@ Create a new Vue instance (You can also nest it within other components). An exa
   Note: you must pass an `id` field as it is used to track the data for faster rendering.
   Of course you don't have to show it. See below the `columns` option.
 
-  [Check out the live demo](https://jsfiddle.net/matfish2/tgp2vrh5/)
+  [Check out the live client-side demo](https://jsfiddle.net/matfish2/tgp2vrh5/)
 
 ## Server side
 
@@ -91,47 +88,35 @@ Javascript:
       }
       });
 
-  All the data is passed as GET parameters.
-  You need to return JSON encoded associative array of two items: `data` and `count`. Here is an implemenation in Laravel:
+  All the data is passed in the following GET parameters: `query`,`limit`,`page`,`orderBy`,`ascending`.
+  You need to return a JSON-encoded associative array of two items:
 
-    extract(Input::all());
+  `data` - An array of objects with identical keys.
+  `count` - Total count before limit.
 
-    $fields = ['id',age','name'];
+  [Check out the live server-side demo, including a code sample](http://ucantourit.co.il/vt-demo.php)
 
-    $direction = $ascending==1?"ASC":"DESC";
+  I have included [an Eloquent implementation](https://github.com/matfish2/vue-tables/tree/master/server/PHP) for Laravel Users.
+  If you happen to write other implementations for PHP or other languages, a pull request would be most welcome, under the following guidelines:
 
-    $people = Person::select($fields);
+    a. Include the class under `./server/{language}`.
 
-    if ($query) {
-      foreach ($fields as $index=>$field) {
-        $method = $index?"orWhere":"where";
-        $people->{$method}($field,'LIKE',"%{$query}%");
-      }
+    b. Name it according to convention: '{concrete}VueTables'.
 
-    }
+    c. if this is the first implementation in this language add an interface, similar to the one found in the PHP folder.
 
-    $count = $people->count();
+    d. Have it implement the interface.
 
-    $people->limit($limit)
-          ->skip($limit * ($page-1))
-          ->orderBy($orderBy,$direction);
+    e. TEST IT.
 
-    return ['data'=>$people->get(),
-            'count'=>$count];
-
-
-I have included a `LaravelVueTables` class for Laravel users under `./server/PHP`.
-If you happen to add other implementions for PHP or other languages, a pull request would be most welcome, under the following guidelines:
-
-a. include the class under ./server/{language}
-
-b. if this is the first implementation in this language add an interface, similar to the one found in the PHP folder.
-
-c. TEST IT.
-
-[Check out the live demo](http://ucantourit.co.il/vt-demo.php)
 
 ## Options
+
+Options are set in three layers, where the more particular overrides the more general.
+
+1. Pre-defined component defaults.
+2. Applicable user-defined defaults for the global Vue Instance. Passed as the second paramter to the `Use` statement.
+3. Options for a single table, passed through the `options` prop.
 
 * `headings` `Object`
 

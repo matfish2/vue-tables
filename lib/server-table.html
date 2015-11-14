@@ -3,32 +3,35 @@
     <div class="col-md-6">
       <div class="form-group form-inline pull-left VueTables__search">
         <label>{{display('filter')}}</label>
-        <input class="form-control"
-        type="text"
-        placeholder="{{display('filterPlaceholder')}}"
-        @keyup="search()"
-        v-model="query">
-      </div>
-    </div>
-    <div class="col-md-6">
+        <div class="VueTables__search__input">
+         <input class="form-control"
+         type="text"
+         placeholder="{{display('filterPlaceholder')}}"
+         @keyup="search()"
+         v-model="query">
+         <span v-if="loading" class="VueTables__loading-icon"></span>
+       </div>
+     </div>
+   </div>
+   <div class="col-md-6">
 
-      <div v-if="options.pagination && options.pagination.dropdown"
-      class="form-group form-inline pull-right VueTables__dropdown-pagination">
-      <label>{{display('page')}}</label>
-      <select class="form-control"
-      v-model="page"
-      @change="setPage(page)">
-      <option v-for="page in totalPages">{{page+1}}</option>
-    </select>
-  </div>
+    <div v-if="options.pagination && options.pagination.dropdown"
+    class="form-group form-inline pull-right VueTables__dropdown-pagination">
+    <label>{{display('page')}}</label>
+    <select class="form-control"
+    v-model="page"
+    @change="setPage(page)">
+    <option v-for="page in totalPages">{{page+1}}</option>
+  </select>
+</div>
 
-  <div class="form-group form-inline pull-right VueTables__limit">
-   <label>{{display('limit')}}</label>
-   <select class="form-control"
-   v-model="limit" name="{{filterPlaceholder}}"
-   @change="setPage(1)" >
-   <option v-for="length in lengths">{{length}}</option>
- </select>
+<div class="form-group form-inline pull-right VueTables__limit">
+ <label>{{display('limit')}}</label>
+ <select class="form-control"
+ v-model="limit" name="{{filterPlaceholder}}"
+ @change="setPage(1)" >
+ <option v-for="length in lengths">{{length}}</option>
+</select>
 </div>
 </div>
 </div>
@@ -38,8 +41,8 @@
   <thead>
    <th @click="orderByColumn(column)"
    v-for="column in columns"><span class="VueTables__heading">{{getHeading(column)}}</span>
-   <i class="VueTables__sort-icon text-muted fa"
-   v-bind:class="orderClass(column)"></i></th>
+   <span class="VueTables__sort-icon glyphicon"
+   v-bind:class="orderClass(column)"></span></th>
  </thead>
 
  <tbody>
