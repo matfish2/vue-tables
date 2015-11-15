@@ -42,7 +42,7 @@
    </th>
   </thead>
   <tbody>
-   <tr v-for="row in data | filterBy query | orderBy orderBy ascending | setCount |  page "
+   <tr v-for="row in data | filterBy query in queriable | orderBy orderBy ascending | setCount | page "
    track-by="id">
      <td v-for="column in columns"
      v-html="row[column] | render row column | date">
@@ -88,4 +88,3 @@ v-bind:class="disabled(1)?'disabled':''">
 <p v-if="count!=0"
 class="VueTables__count">{{display('count', count)}}</p>
 </div>
-
