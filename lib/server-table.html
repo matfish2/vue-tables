@@ -1,7 +1,7 @@
 <div class="VueTables VueTables--server">
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group form-inline pull-left VueTables__search">
+      <div v-if="!filterByColumn" class="form-group form-inline pull-left VueTables__search">
         <label>{{display('filter')}}</label>
         <span class="VueTables__search__input">
          <input class="form-control"
@@ -39,10 +39,17 @@
 <table class="VueTables__table table table-striped">
 
   <thead>
-   <th @click="orderByColumn(column)"
+  <tr>
+       <th @click="orderByColumn(column)"
    v-for="column in columns"><span class="VueTables__heading">{{getHeading(column)}}</span>
    <span class="VueTables__sort-icon glyphicon"
    v-bind:class="orderClass(column)"></span></th>
+  </tr>
+ <tr v-if="filterByColumn" class="VueTables__filters-row">
+      <th v-for="column in columns">
+        <input class="form-control" type="text" placeholder="{{display('filterBy',getHeading(column))}}" v-model="queryByColumn[column]" @keyup="search(true)">
+      </th>
+ </tr>
  </thead>
 
  <tbody>
