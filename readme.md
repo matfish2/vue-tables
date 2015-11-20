@@ -163,7 +163,8 @@ Override default texts for localization or otherwise. Defaults are:
       filterPlaceholder:"Search query",
       limit:"Records:",
       noResults:"No matching records",
-      page:"Page:" // for dropdown pagination
+      page:"Page:" // for dropdown pagination,
+      filterBy: "Filter by {column}" // Placeholder for search fields when filtering by column
     }
 
 * `pagination`  `object`
