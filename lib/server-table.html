@@ -1,7 +1,7 @@
 <div class="VueTables VueTables--server">
   <div class="row">
     <div class="col-md-6">
-      <div v-if="!filterByColumn" class="form-group form-inline pull-left VueTables__search">
+      <div v-if="!options.filterByColumn" class="form-group form-inline pull-left VueTables__search">
         <label>{{display('filter')}}</label>
         <span class="VueTables__search__input">
          <input class="form-control"
@@ -15,7 +15,7 @@
    </div>
    <div class="col-md-6">
 
-    <div v-if="options.pagination && options.pagination.dropdown"
+    <div v-if="options.pagination && options.pagination.dropdown && totalPages>0"
     class="form-group form-inline pull-right VueTables__dropdown-pagination">
     <label>{{display('page')}}</label>
     <select class="form-control"
@@ -45,9 +45,9 @@
    <span class="VueTables__sort-icon glyphicon"
    v-bind:class="orderClass(column)"></span></th>
   </tr>
- <tr v-if="filterByColumn" class="VueTables__filters-row">
+ <tr v-if="options.filterByColumn" class="VueTables__filters-row">
       <th v-for="column in columns">
-        <input class="form-control" type="text" placeholder="{{display('filterBy',getHeading(column))}}" v-model="queryByColumn[column]" @keyup="search(true)">
+        <input  v-if="extras.indexOf(column)==-1" class="form-control" type="text" placeholder="{{display('filterBy',getHeading(column))}}" v-model="query[column]" @keyup="search(true)">
       </th>
  </tr>
  </thead>

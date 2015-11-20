@@ -106,9 +106,9 @@ Javascript:
 
   b. Name it according to convention: `{concrete}VueTables`.
 
-  c. if this is the first implementation in this language add an interface, similar to the one found in the PHP folder.
+  c. if this is the first implementation in this language add an interface and an abstract parent class, similar to the ones found in the PHP folder.
 
-  d. Have it implement the interface.
+  d. Have it implement the interface and extend the parent class.
 
   e. TEST IT.
 
@@ -174,6 +174,11 @@ Override default texts for localization or otherwise. Defaults are:
    * `chunk` `number`
       By Default pagination links are presented in groups of 10, with navigation between the groups.
       Use this option to set your own chunk size.
+
+* `filterByColumn` `boolean`
+
+  When set to `true` a unique per-column filter will appear under each header, instead of the generic one.
+  On the server-side component the query string needs to be decoded back to an array. Check out the [PHP implementation](https://github.com/matfish2/vue-tables/tree/master/server/PHP/VueTables.php) for a hint.
 
 * `delay` `number` (server-side only)
 
