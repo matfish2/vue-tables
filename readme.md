@@ -1,10 +1,9 @@
 # Vue Tables
 
 This Vue component offers an easy and intuitive way of creating and displaying data tables with data coming from the client or from the server using AJAX requests.
-It includes all the usual features: a search field, limit select, total records, sorting and pagination.
 The Styling is based on Bootstrap, but of course you can write your own.
 
-*This is a new pacakge and as such it is constantly evolving. Please help me improve it by submitting bug reports, enhancment requests, questions and other issues.*
+*This is a new pacakge and as such it is constantly evolving. Please help me improve it by submitting bug reports, feature requests, questions and other issues.*
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
