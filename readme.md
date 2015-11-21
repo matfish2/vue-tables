@@ -241,3 +241,4 @@ If an invalid format was passed it will resort to the default format and spit ou
 -----------------
 CSS Note: to center the pagination apply `text-align:center` to the wrapping element
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/matfish2/vue-tables/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
