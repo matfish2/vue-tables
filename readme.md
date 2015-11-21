@@ -127,7 +127,7 @@ At times you might want to refresh the data, as a reaction to data alteration on
 
 Note: If your server requests are relatively slow you can latch a loading gif or animated CSS into the `.VueTables__loading-icon` element, which is conditionally added as a child of `.VueTables__search__input`.
 
-## Options
+# Options
 
 Options are set in three layers, where the more particular overrides the more general.
 
