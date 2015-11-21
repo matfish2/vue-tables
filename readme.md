@@ -95,6 +95,8 @@ Javascript:
 
   `count` `number` - Total count before limit.
 
+At times you might want to refresh the data, as a reaction to data alteration on the server. To do so hunt down the component's instance using `$parent` and `$children` and call the `refresh()` method on it.
+
   [Check out the live server-side demo, including a code sample](http://ucantourit.co.il/vt-demo.php)
 
 ### Implementations
