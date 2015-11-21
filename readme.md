@@ -10,7 +10,7 @@ The Styling is based on Bootstrap, but of course you can write your own.
 - [Installation](#installation)
 - [Usage](#usage)
     - [Client Side](#client-side)
-    - [Server Side](#client-side)
+    - [Server Side](#server-side)
 - [Options](#options)
 
 # Dependencies
