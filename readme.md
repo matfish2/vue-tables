@@ -4,6 +4,15 @@ This Vue component offers an easy and intuitive way of creating and displaying d
 It includes all the usual features: a search field, limit select, total records, sorting and pagination.
 The Styling is based on Bootstrap, but of course you can write your own.
 
+*This is a new pacakge and as such it is constantly evolving. Please help me improve it by submitting bug reports, enhancment requests, questions and other issues.*
+
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Client Side](#client-side)
+    - [Server Side](#client-side)
+- [Options](#options)
+
 # Dependencies
 
 * JQuery. Required.
@@ -242,5 +251,3 @@ If an invalid format was passed it will resort to the default format and spit ou
 
 -----------------
 CSS Note: to center the pagination apply `text-align:center` to the wrapping element
-
-This is a new pacakge and it is constantly evolving. Please don't hesitate to post bug reports, enhancment requests, questions and other issues.
