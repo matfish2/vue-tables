@@ -205,7 +205,8 @@ This results in two benefits:
 1. Dates are always correctly sorted regardless of their presentation.
 2. You are not hardcoding the format into each date property.
 
-By default date will be presented using the native `toLocaleDateString()` function.
+
+By default dates will be presented using the native `toLocaleDateString()` function.
 To override this behaviour specify your own format:
 
     {
