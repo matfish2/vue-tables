@@ -125,7 +125,7 @@ At times you might want to refresh the data, as a reaction to data alteration on
 ### Loading Indicator
 
 The server-side component fires off two complementary events up the components tree: `vue-tables.loading` and `vue-tables.loaded`.
-You can listen to those events on a parent component using `this.$on` and use them to add and remove loading indication, respectively.
+You can listen to those events on a parent component using `this.$on` and use them to add and remove a loading indicator, respectively.
 
 # Options
 
