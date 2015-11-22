@@ -103,6 +103,13 @@ Javascript:
 
   `count` `number` - Total count before limit.
 
+### Loading Indicator
+
+The server-side component fires off two complementary events up the components tree: `vue-tables.loading` and `vue-tables.loaded`.
+You can listen to those events on a parent component using `this.$on` and use them to add and remove a loading indicator, respectively.
+
+### Programmatic reload
+
 At times you might want to refresh the data, as a reaction to data alteration on the server. To do so hunt down the component's instance using `$parent` and `$children` and call the `refresh()` method on it.
 
   [Check out the live server-side demo, including a code sample](http://ucantourit.co.il/vt-demo.php)
@@ -122,10 +129,6 @@ At times you might want to refresh the data, as a reaction to data alteration on
 
   e. TEST IT.
 
-### Loading Indicator
-
-The server-side component fires off two complementary events up the components tree: `vue-tables.loading` and `vue-tables.loaded`.
-You can listen to those events on a parent component using `this.$on` and use them to add and remove a loading indicator, respectively.
 
 # Options
 

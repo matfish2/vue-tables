@@ -1,11 +1,12 @@
 {
   "name": "vue-tables",
   "description": "Create server- or client-side bootstrap data tables",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "keywords": [
     "vue",
     "bootstrap",
-    "tables"
+    "tables",
+    "grids"
   ],
   "repository": {
     "type": "git",
