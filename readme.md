@@ -122,9 +122,10 @@ At times you might want to refresh the data, as a reaction to data alteration on
 
   e. TEST IT.
 
-----------------------
+### Loading Indicator
 
-Note: If your server requests are relatively slow you can latch a loading gif or animated CSS into the `.VueTables__loading-icon` element, which is conditionally added as a child of `.VueTables__search__input`.
+The server-side component fires off two complementary events up the components tree: `vue-tables.loading` and `vue-tables.loaded`.
+You can listen to those events on a parent component using `this.$on` and use them to add and remove loading indication, respectively.
 
 # Options
 
