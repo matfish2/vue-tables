@@ -3,8 +3,6 @@
 This Vue component offers an easy and intuitive way of creating and displaying data tables with data coming from the client or from the server using AJAX requests.
 The Styling is based on Bootstrap, but of course you can write your own.
 
-*This is a new package and as such it is constantly evolving. Please help me improve it by submitting bug reports, feature requests, questions and other issues.*
-
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -103,10 +101,17 @@ Javascript:
 
   `count` `number` - Total count before limit.
 
-### Loading Indicator
+### Events
 
-The server-side component fires off two complementary events up the components tree: `vue-tables.loading` and `vue-tables.loaded`.
-You can listen to those events on a parent component using `this.$on` and use them to add and remove a loading indicator, respectively.
+`vue-tables.loading`
+
+Fires off when a request for data is sent to the server.
+
+`vue-tables.loaded`
+
+Fires off after the response data has been attached to the table. Sends through the response.
+
+You can listen to those complementary events on a parent component and use them to add and remove a *loading indicator*, respectively.
 
 ### Programmatic reload
 
