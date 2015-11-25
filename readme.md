@@ -202,7 +202,7 @@ Override default texts for localization or otherwise. Defaults are:
 
 * `delay` `number` (server-side only)
 
-In order to avoid redundant server requests and data rendering, a 300ms delay is set to detect when the user has ended his query.
+In order to avoid redundant server requests and data rendering, a 500ms delay is set to detect when the user has ended his query.
 Use this option to set your own delay value. (e.g adapt the value to the average typing speed of your intended audience).
 
 * `dateFormat`  `string` (client-side only)
