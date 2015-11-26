@@ -72,10 +72,17 @@ colspan="{{columns.length}}">
   v-if="options.pagination && !options.pagination.dropdown"
   class="pagination VueTables__pagination">
 
-  <li class="VueTables__pagination-item VueTables__pagination-item-prev"
-  v-bind:class="disabled(-1)?'disabled':''">
+  <li class="VueTables__pagination-item VueTables__pagination-item-prev-chunk"
+  v-bind:class="chunkNavDisabled(-1)?'disabled':''">
   <a href="javascript:void(0);"
-  @click="!disabled(-1) && chunk(-1)"><<</a>
+  @click="!chunkNavDisabled(-1) && chunk(-1)"><<</a>
+</li>
+
+
+  <li class="VueTables__pagination-item VueTables__pagination-item-prev-page"
+  v-bind:class="pageNavDisabled(-1)?'disabled':''">
+  <a href="javascript:void(0);"
+  @click="!pageNavDisabled(-1) && setPage(page-1)"><</a>
 </li>
 
 <li class="VueTables__pagination-item"
@@ -86,10 +93,16 @@ v-bind:class="active(paginationStart + $index - 1)">
 @click="setPage(paginationStart + $index)">{{paginationStart + $index}}</a>
 </li>
 
-<li class="VueTables__pagination-item VueTables__pagination-item-next"
-v-bind:class="disabled(1)?'disabled':''">
+<li class="VueTables__pagination-item VueTables__pagination-item-next-page"
+v-bind:class="pageNavDisabled(1)?'disabled':''">
 <a href="javascript:void(0);"
-@click="!disabled(1) && chunk(1)">>></a>
+@click="!pageNavDisabled(1) && setPage(page+1)">></a>
+</li>
+
+<li class="VueTables__pagination-item VueTables__pagination-item-next-chunk"
+v-bind:class="chunkNavDisabled(1)?'disabled':''">
+<a href="javascript:void(0);"
+@click="!chunkNavDisabled(1) && chunk(1)">>></a>
 </li>
 
 </ul>
