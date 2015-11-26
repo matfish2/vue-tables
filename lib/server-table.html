@@ -6,7 +6,7 @@
          <input class="form-control"
          type="text"
          placeholder="{{display('filterPlaceholder')}}"
-         @keyup="search()"
+         @keyup="query.trim() && search()"
          v-model="query"/>
      </div>
    </div>
@@ -44,7 +44,7 @@
   </tr>
  <tr v-if="options.filterByColumn" class="VueTables__filters-row">
       <th v-for="column in columns">
-        <input  v-if="extras.indexOf(column)==-1" class="form-control" type="text" placeholder="{{display('filterBy',getHeading(column))}}" v-model="query[column]" @keyup="search(true)">
+        <input  v-if="extras.indexOf(column)==-1" class="form-control" type="text" placeholder="{{display('filterBy',getHeading(column))}}" v-model="query[column]" @keyup="query[column].trim() && search(true)">
       </th>
  </tr>
  </thead>
