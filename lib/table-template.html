@@ -1,35 +1,35 @@
-<div class="VueTables VueTables--client">
+<div class="VueTables VueTables--[[source]]">
   <div class="row">
-
     <div class="col-md-6">
       <div v-if="!options.filterByColumn" class="form-group form-inline pull-left VueTables__search">
         <label>{{display('filter')}}</label>
         <input class="form-control"
         type="text"
         placeholder="{{display('filterPlaceholder')}}"
-        @keyup="setPage(1)"
-        v-model="query">
+        @keyup="search()"
+        v-model="query"/>
       </div>
     </div>
 
     <div class="col-md-6">
       <div v-if="options.pagination && options.pagination.dropdown && totalPages>0"
-      class="form-group form-inline pull-right VueTables__dropdown-pagination">
-      <label>{{display('page')}}</label>
-      <select class="form-control"
-      v-model="page"
-      @change="setPage(page)">
-      <option v-for="page in totalPages">{{page+1}}</option>
-    </select>
-  </div>
+        class="form-group form-inline pull-right VueTables__dropdown-pagination">
+        <label>{{display('page')}}</label>
+        <select class="form-control"
+        v-model="page"
+        @change="setPage(page)">
+        <option v-for="page in totalPages">{{page+1}}</option>
+      </select>
+    </div>
 
-  <div class="form-group form-inline pull-right VueTables__limit">
-   <label>{{display('limit')}}</label>
-   <select class="form-control" v-model="limit" @change="setPage(1)" >
-    <option v-for="length in lengths">{{length}}</option>
-  </select>
-</div>
-
+    <div class="form-group form-inline pull-right VueTables__limit">
+     <label>{{display('limit')}}</label>
+     <select class="form-control"
+     v-model="limit"
+     @change="setPage(1)" >
+     <option v-for="length in lengths">{{length}}</option>
+   </select>
+ </div>
 </div>
 </div>
 
@@ -39,24 +39,24 @@
      <th @click="orderByColumn(column)"
      v-for="column in columns"><span class="VueTables__heading">{{getHeading(column)}}</span>
      <span class="VueTables__sort-icon glyphicon"
-     v-bind:class="orderClass(column)"></span>
-   </th>
- </tr>
-
- <tr v-if="options.filterByColumn" class="VueTables__filters-row">
-  <th v-for="column in columns">
-  <input @keyup="setPage(1)" v-if="extras.indexOf(column)==-1" class="form-control" type="text" placeholder="{{display('filterBy',getHeading(column))}}" v-model="query[column]">
-  </th>
-</tr>
+     v-bind:class="orderClass(column)"></span></th>
+   </tr>
+   <tr v-if="options.filterByColumn" class="VueTables__filters-row">
+    <th v-for="column in columns">
+      <input @keyup="search(true)"
+             v-if="extras.indexOf(column)==-1"
+             class="form-control"
+             type="text"
+             placeholder="{{display('filterBy',getHeading(column))}}"
+             v-model="query[column]">
+    </th>
+  </tr>
 </thead>
 <tbody>
- <tr v-for="row in data | search q| orderBy orderBy ascending | setCount | page"
- track-by="id">
- <td v-for="column in columns"
- v-html="row[column] | render row column | date">
-</td>
-</tr>
-
+ <tr v-for="row in data [[rowFilters]]" [[trackby]]>
+   <td v-for="column in columns"
+   v-html="row[column] | render row column [[columnFilters]]"></td>
+ </tr>
 
 <tr v-if="count==0"
 class="VueTables__no-results">
@@ -79,10 +79,10 @@ colspan="{{columns.length}}">
 </li>
 
 
-  <li class="VueTables__pagination-item VueTables__pagination-item-prev-page"
-  v-bind:class="pageNavDisabled(-1)?'disabled':''">
-  <a href="javascript:void(0);"
-  @click="!pageNavDisabled(-1) && setPage(page-1)"><</a>
+<li class="VueTables__pagination-item VueTables__pagination-item-prev-page"
+v-bind:class="pageNavDisabled(-1)?'disabled':''">
+<a href="javascript:void(0);"
+@click="!pageNavDisabled(-1) && setPage(page-1)"><</a>
 </li>
 
 <li class="VueTables__pagination-item"
@@ -104,7 +104,6 @@ v-bind:class="chunkNavDisabled(1)?'disabled':''">
 <a href="javascript:void(0);"
 @click="!chunkNavDisabled(1) && chunk(1)">>></a>
 </li>
-
 </ul>
 
 <p v-if="count!=0"
