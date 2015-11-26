@@ -53,7 +53,7 @@
   </tr>
 </thead>
 <tbody>
- <tr v-for="row in data [[rowFilters]]" [[trackby]]>
+ <tr v-for="row in data [[rowFilters]]" [[trackBy]]>
    <td v-for="column in columns"
    v-html="row[column] | render row column [[columnFilters]]"></td>
  </tr>
