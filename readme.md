@@ -105,7 +105,7 @@ Javascript:
 
 `vue-tables.loading`
 
-Fires off when a request for data is sent to the server.
+Fires off when a request is sent to the server. Sends through the request data.
 
 `vue-tables.loaded`
 
