@@ -201,6 +201,10 @@ Override default texts for localization or otherwise. Defaults are:
   On the server-side component a boolean `byColumn` param is sent along with the request to indicate what type of query was sent.
   Check out the [Eloquent implementation](https://github.com/matfish2/vue-tables/tree/master/server/PHP).
 
+* `highlightMatches` `boolean`
+
+  When set to `true` all texts matching the query will be wrapped with a `b.VueTables__highlight` element.
+
 * `delay` `number` (server-side only)
 
 In order to avoid redundant server requests and data rendering, a 500ms delay is set to detect when the user has ended his query.
