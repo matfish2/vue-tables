@@ -43,7 +43,7 @@
    </tr>
    <tr v-if="options.filterByColumn" class="VueTables__filters-row">
     <th v-for="column in columns">
-      <input @keyup="search(true)"
+      <input @keyup="search()"
              v-if="extras.indexOf(column)==-1"
              class="form-control"
              type="text"

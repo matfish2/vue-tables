@@ -4,7 +4,7 @@ namespace App\Services\VueTables;
 
 use Input;
 
-Class EloquentVueTables extends VueTables implements VueTablesInterface  {
+Class EloquentVueTables implements VueTablesInterface  {
 
   public function get($model, Array $fields) {
 
@@ -13,8 +13,6 @@ Class EloquentVueTables extends VueTables implements VueTablesInterface  {
     $data = $model->select($fields);
 
     if (isset($query) && $query) {
-
-      $query = $this->parseQuery($query, $byColumn);
 
       if ($byColumn==1):
        foreach ($query as $field=>$query):
