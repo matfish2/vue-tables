@@ -1,4 +1,7 @@
 <?php
+/**
+ *  VueTables server-side component Eloquent implementation
+ */
 
 namespace App\Services\VueTables;
 
@@ -15,8 +18,8 @@ Class EloquentVueTables implements VueTablesInterface  {
     if (isset($query) && $query) {
 
       if ($byColumn==1):
-       foreach ($query as $field=>$query):
-         $data->where($field,'LIKE',"%{$query}%");
+       foreach ($query as $field=>$q):
+         $data->where($field,'LIKE',"%{$q}%");
        endforeach;
        else:
         foreach ($fields as $index=>$field):
