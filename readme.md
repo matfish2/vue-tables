@@ -94,7 +94,7 @@ Javascript:
       }
       });
 
-  All the data is passed in the following GET parameters: `query`,`limit`,`page`,`orderBy`,`ascending`.
+  All the data is passed in the following GET parameters: `query`,`limit`,`page`,`orderBy`,`ascending`,`byColumn`.
   You need to return a JSON object with two properties:
 
   `data` `array` - An array of row objects with identical keys.
@@ -198,7 +198,8 @@ Override default texts for localization or otherwise. Defaults are:
 * `filterByColumn` `boolean`
 
   When set to `true` a unique per-column filter will appear under each header, instead of the generic one.
-  On the server-side component the query will be passed as an array
+  On the server-side component a boolean `byColumn` param is sent along with the request to indicate what type of query was sent.
+  Check out the [Eloquent implementation](https://github.com/matfish2/vue-tables/tree/master/server/PHP).
 
 * `delay` `number` (server-side only)
 
