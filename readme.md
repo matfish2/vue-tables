@@ -1,4 +1,4 @@
-# Vue Tables
+# Vue Tables [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg)](https://travis-ci.org/matfish2/vue-tables)
 
 This Vue component offers an easy and intuitive way of creating and displaying data tables with data coming from the client or from the server using AJAX requests.
 The Styling is based on Bootstrap, but of course you can write your own.
