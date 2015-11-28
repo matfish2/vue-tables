@@ -219,7 +219,8 @@ This results in two benefits:
 1. Dates are always correctly sorted regardless of their presentation.
 2. You are not hardcoding the format into each date property.
 
-The `dateFormat` option is passed to the popular [dateformat](https://www.npmjs.com/package/dateformat) package for parsing the date.
+
+The `dateFormat` option is passed to the popular [dateformat](https://www.npmjs.com/package/dateformat) package for parsing the date, so use its conventions.
 
 -----------------
 CSS Note: to center the pagination apply `text-align:center` to the wrapping element
