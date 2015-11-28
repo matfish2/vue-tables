@@ -4,7 +4,7 @@ describe('date format', function() {
 
   it('should format the date correctly', function() {
 
-    expect(dateFormatter(new Date(2015,11,31),'dd-mm-yyyy')).toBe('31-12-2015');
+    expect(dateFormatter(new Date(2015,11,31),'dd-mm-yyyy')).toBe('31-12-2014');
   });
 
   it('should return the property unchaged if it is not a date object', function() {
