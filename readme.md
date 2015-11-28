@@ -219,49 +219,7 @@ This results in two benefits:
 1. Dates are always correctly sorted regardless of their presentation.
 2. You are not hardcoding the format into each date property.
 
-
-By default dates will be presented using the native `toLocaleDateString()` function.
-To override this behaviour specify your own format:
-
-    {
-        dateFormat: "M-Y" // e.g "11-2015"
-    }
-
-The conventions are:
-
-#### Date:
-
-`Y` or `y` - full year
-
-`M` - Month with leading zeros
-
-`m` - Month without leading zeros.
-
-`D` - Day with leading zeros.
-
-`d` - Day without leading zeros.
-
-
-#### Time (separate from date by a single space):
-
-`H` - 24-hour format of an hour with leading zeros  00 through 23
-
-`h` -  12-hour format of an hour with leading zeros  01 through 12
-
-`G` - 24-hour format of an hour without leading zeros
-
-`g` - 12-hour format of an hour without leading zeros
-
-`i` -  Minutes with leading zeros
-
-`s` - Seconds, with leading zeros
-
-Spearators:
-
-Date: `-`, `.` , `/`
-Time : `:`
-
-If an invalid format was passed it will resort to the default format and spit out a warning to the console.
+The `dateFormat` option is passed to the popular [dateformat](https://www.npmjs.com/package/dateformat) package for parsing the date.
 
 -----------------
 CSS Note: to center the pagination apply `text-align:center` to the wrapping element
