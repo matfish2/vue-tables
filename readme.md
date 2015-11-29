@@ -206,7 +206,7 @@ Override default texts for localization or otherwise. Defaults are:
 
 * `skin` `string`
 
-space separated bootstrap table styling classes. Default: `table-striped table-bordered table-hover`
+  space separated Bootstrap table styling classes. Default: `table-striped table-bordered table-hover`
 
 * `delay` `number` (server-side only)
 
