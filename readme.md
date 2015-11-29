@@ -209,6 +209,13 @@ Override default texts for localization or otherwise. Defaults are:
 
   space separated Bootstrap table styling classes. Default: `table-striped table-bordered table-hover`
 
+* `orderBy` `object`
+
+  By default the client-side component will initially sort by the first column, and the server-side component by an alleged `id` column, both ascending. use this option to override it.
+
+  * `column` `string`
+  * `ascending` `boolean`
+
 * `delay` `number` (server-side only)
 
 In order to avoid redundant server requests and data rendering, a 500ms delay is set to detect when the user has ended his query.
