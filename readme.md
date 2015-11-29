@@ -157,6 +157,7 @@ If you want to set explicitly which columns will show use this option.
 * `sortable`  `Array`
 
 By Default all columns (except extras) are sortable. Use this option to explicitly state which columns should be sortable.
+Sortable headings will receive a `VueTables__sortable` class.
 
 * `perPage`  `number`
 

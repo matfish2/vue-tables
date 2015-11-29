@@ -46,6 +46,14 @@ it('applys the correct skin', function() {
 
 });
 
+it('adds a sortable class to the applicable th\'s', function() {
+   var headings = $(".VueTables__table thead th");
+    expect(headings.eq(0).hasClass("VueTables__sortable")).toBe(true);
+    expect(headings.eq(1).hasClass("VueTables__sortable")).toBe(true);
+    expect(headings.eq(2).hasClass("VueTables__sortable")).toBe(true);
+
+});
+
   afterAll(function(){
    $("#" + entity).remove();
   });
