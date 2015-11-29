@@ -1,4 +1,4 @@
-describe('it draws the table', function(){
+describe('Draws a client-side table', function(){
 
   var draw_table = require('../helpers/draw-table');
   var data = require('../helpers/people.js');
@@ -37,6 +37,14 @@ it('displays all default texts', function() {
 
 });
 
+it('applys the correct skin', function() {
+  var table = $(".VueTables__table");
+  expect(table.hasClass("table-striped")).toBe(true);
+  expect(table.hasClass("table-bordered")).toBe(true);
+  expect(table.hasClass("table-hover")).toBe(true);
+  expect(table.hasClass("table-condensed")).toBe(false);
+
+});
 
   afterAll(function(){
    $("#" + entity).remove();

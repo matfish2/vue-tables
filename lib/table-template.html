@@ -33,7 +33,7 @@
 </div>
 </div>
 
-<table class="VueTables__table table table-striped">
+<table class="VueTables__table table" v-bind:class="options.skin">
   <thead>
     <tr>
      <th @click="orderByColumn(column)"

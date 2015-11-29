@@ -204,6 +204,10 @@ Override default texts for localization or otherwise. Defaults are:
 
   When set to `true` all texts matching the query will be wrapped with a `b.VueTables__highlight` element.
 
+* `skin` `string`
+
+space separated bootstrap table styling classes. Default: `table-striped table-bordered table-hover`
+
 * `delay` `number` (server-side only)
 
 In order to avoid redundant server requests and data rendering, a 500ms delay is set to detect when the user has ended his query.
