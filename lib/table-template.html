@@ -46,7 +46,7 @@
    <tr v-if="options.filterByColumn" class="VueTables__filters-row">
     <th v-for="column in columns">
       <input @keyup="search()"
-             v-if="extras.indexOf(column)==-1"
+             v-if="customColumns.indexOf(column)==-1"
              class="form-control"
              type="text"
              placeholder="{{display('filterBy',getHeading(column))}}"
