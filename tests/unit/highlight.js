@@ -1,3 +1,0 @@
-describe('Highlight matches', function() {
-
-});

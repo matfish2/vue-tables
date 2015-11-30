@@ -8,12 +8,15 @@
     var Vue = require('vue');
     var VueTables = require('../../index');
     Vue.use(VueTables.client);
-    new Vue({
+
+    var vm = new Vue({
       el:"#" +id,
       data: {
        tableData:data,
        options: options
     }
   });
+
+    return vm.$children[0];
   }
 
