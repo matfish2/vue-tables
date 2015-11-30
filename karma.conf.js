@@ -15,10 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'index.js',
-      'lib/**/*.js',
-      'tests/acceptance/**/*.js',
-      'tests/unit/**/*.js'
+    'index.js',
+    'lib/**/*.js',
+    'tests/acceptance/**/*.js',
+    'tests/unit/**/*.js'
     ],
 
 
@@ -30,12 +30,11 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-         'index.js': ['browserify'],
-         'lib/**/*.js': ['browserify'],
-         'tests/acceptance/**/*.js': [ 'browserify' ],
-         'tests/unit/**/*.js': [ 'browserify' ]
-    },
-
+     'index.js': ['browserify'],
+     'lib/**/*.js': ['browserify'],
+     'tests/acceptance/**/*.js': [ 'browserify' ],
+     'tests/unit/**/*.js': [ 'browserify' ]
+   },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
