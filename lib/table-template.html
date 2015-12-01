@@ -40,7 +40,7 @@
      v-for="column in columns"
      v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
      <span v-if="sortable(column)"
-           class="VueTables__sort-icon glyphicon"
+           class="VueTables__sort-icon glyphicon pull-right"
      v-bind:class="sortableChevronClass(column)"></span></th>
    </tr>
    <tr v-if="options.filterByColumn" class="VueTables__filters-row">

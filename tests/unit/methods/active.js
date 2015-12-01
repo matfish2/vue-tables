@@ -4,8 +4,8 @@ describe('determine if a given page is active', function() {
         page: 4
       };
 
-    it("returns 'active' if the given page is not the current one", function() {
-      var activeClass = active.call(context, 3); // the page is given as a position in a zero-based array, so the actual page is +1
+    it("returns 'active' if the given page is the current one", function() {
+      var activeClass = active.call(context, 3); // the page is given as a position in a zero-based array, so the actual page is n+1
       expect(activeClass).toBe('active');
     });
 
