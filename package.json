@@ -20,15 +20,7 @@
     "vue": ">=1.0",
     "dateformat": ">=1.0.12"
   },
-  "engine-strict": true,
-  "engines": {
-    "node": "*"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "licenses": "MIT",
   "main": "index.js",
   "tonicExampleFilename": "tonic-example.js",
   "scripts": {
