@@ -161,7 +161,11 @@ Sortable headings will receive a `VueTables__sortable` class.
 
 * `perPage`  `number`
 
-Default records-per-page are set to 10. Acceptable values are 5,10,20,50.
+Default records-per-page are set to 10.
+
+* `perPageValues` `Array`
+
+Default: `[10,25,50,100]`
 
 * `templates`  `Object`
 

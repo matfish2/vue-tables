@@ -27,7 +27,7 @@
      <select class="form-control"
      v-model="limit"
      @change="setPage(1)" >
-     <option v-for="length in lengths">{{length}}</option>
+     <option v-for="value in options.perPageValues">{{values}}</option>
    </select>
  </div>
 </div>
