@@ -18,6 +18,7 @@
     "tonic-example.js"
   ],
   "dependencies": {
+    "vue": ">=1.0",
     "dateformat": ">=1.0.12"
   },
   "engine-strict": true,
