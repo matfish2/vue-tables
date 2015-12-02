@@ -176,6 +176,11 @@ Use this to wrap your cell content with a template using wildcards. You can also
       edit:"<a href='{id}'><i class='fa fa-edit'></i></a>"
     }
 
+* `compileTemplates` `boolean`
+
+Set this to `true` if your templates contain some vue-specific HTML logic that needs to be compiled.
+Note: The logic is attached to *the component's instance*, so don't forget to factor in the scope (e.g `<span @click="$parent.clicked({id})>Click me</span>`)
+
 * `texts`  `Object`
 
 Override default texts for localization or otherwise. Defaults are:
