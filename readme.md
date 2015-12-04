@@ -227,7 +227,7 @@ Override default texts for localization or otherwise. Defaults are:
   * `column` `string`
   * `ascending` `boolean`
 
-* `bottomHeadings` `boolean`
+* `footerHeadings` `boolean`
 
   when set to `true` the headings will be duplicated and displayed at the bottom of the table as well
 
