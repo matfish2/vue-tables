@@ -72,7 +72,7 @@ Create a new Vue instance (You can also nest it within other components). An exa
   Note: you must pass an `id` field as it is used to track the data for faster rendering.
   Of course you don't have to show it. See below the `columns` option.
 
-  [Check out the live client-side demo](https://jsfiddle.net/matfish2/tgp2vrh5/)
+  [Check out the live client-side demo](https://jsfiddle.net/matfish2/f5h8xwgn/)
 
 ## Server side
 
