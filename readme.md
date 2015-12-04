@@ -1,4 +1,6 @@
-# Vue Tables [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg)](https://travis-ci.org/matfish2/vue-tables)
+# Vue Tables
+
+[![Build Status](https://travis-ci.org/matfish2/vue-tables.svg)](https://travis-ci.org/matfish2/vue-tables)
 
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
@@ -179,7 +181,7 @@ Use this to wrap your cell content with a template using wildcards. You can also
 * `compileTemplates` `boolean`
 
 Set this to `true` if your templates contain some vue-specific HTML logic that needs to be compiled.
-Note: The logic is attached to *the component's instance*, so don't forget to factor in the scope (e.g `<span @click="$parent.clicked({id})>Click me</span>`)
+Note: The logic is attached to *the component's instance*, so don't forget to factor in the scope (e.g `<span @click="$parent.doSomething({id})">Click me</span>`)
 
 * `texts`  `Object`
 
@@ -224,6 +226,10 @@ Override default texts for localization or otherwise. Defaults are:
 
   * `column` `string`
   * `ascending` `boolean`
+
+* `bottomHeadings` `boolean`
+
+  when set to `true` the headings will be duplicated and displayed at the bottom of the table as well
 
 * `delay` `number` (server-side only)
 

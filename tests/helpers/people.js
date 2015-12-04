@@ -1,4 +1,5 @@
-module.exports =  [{
+module.exports = function() {
+    return [{
         id: 1,
         name: "Sidney Brakus",
         age: 113
@@ -399,3 +400,5 @@ module.exports =  [{
         name: "Deshawn Hodkiewicz",
         age: 73
     }];
+
+}

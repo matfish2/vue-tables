@@ -1,7 +1,7 @@
 describe('Page filter', function() {
 
   var page = require('../../../lib/filters/page');
-  var data = require('../../helpers/people');
+  var data = require('../../helpers/people')();
 
    var context = {
       limit:50,

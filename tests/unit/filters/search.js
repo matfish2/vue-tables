@@ -1,7 +1,7 @@
 describe('it filters down the data according to the query', function() {
 
   var search = require('../../../lib/filters/search');
-  var data = require('../../helpers/people');
+  var data = require('../../helpers/people')();
 
   var context = {
     options: {

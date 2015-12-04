@@ -27,7 +27,7 @@
      <select class="form-control"
      v-model="limit"
      @change="setPage(1)" >
-     <option v-for="value in options.perPageValues">{{values}}</option>
+     <option v-for="value in options.perPageValues">{{value}}</option>
    </select>
  </div>
 </div>
@@ -54,6 +54,16 @@
     </th>
   </tr>
 </thead>
+<tfoot v-if="options.footerHeadings">
+   <tr>
+     <th @click="orderByColumn(column)"
+     v-for="column in columns"
+     v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
+     <span v-if="sortable(column)"
+           class="VueTables__sort-icon glyphicon pull-right"
+     v-bind:class="sortableChevronClass(column)"></span></th>
+   </tr>
+</tfoot>
 <tbody>
  <tr v-for="row in data [[rowFilters]]" [[trackBy]]>
    <td v-for="column in columns"
