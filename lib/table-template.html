@@ -64,7 +64,7 @@
      v-bind:class="sortableChevronClass(column)"></span></th>
    </tr>
 </tfoot>
-<tbody>
+<tbody v-el:tbody>
  <tr v-for="row in data [[rowFilters]]" [[trackBy]]>
    <td v-for="column in columns"
    v-html="row[column] | render row column [[columnFilters]]"></td>
