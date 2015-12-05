@@ -144,7 +144,7 @@ Options are set in three layers, where the more particular overrides the more ge
 2. Applicable user-defined defaults for the global Vue Instance. Passed as the second paramter to the `Use` statement.
 3. Options for a single table, passed through the `options` prop.
 
-### [Explore options](//jsfiddle.net/matfish2/bp1g4khr/embedded/result/)
+[EXPLORE OPTIONS](//jsfiddle.net/matfish2/bp1g4khr/embedded/result/)
 
 -----------------
 CSS Note: to center the pagination apply `text-align:center` to the wrapping element
