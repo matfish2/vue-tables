@@ -1,13 +1,21 @@
-// TEST ME
-// module.exports = function(text, value) {
+describe('display text', function() {
+    var display = require('../../../lib/methods/display');
+     var context = {
+      options: {
+         texts: {
+          hello:"Hello {someone}",
+          records:"results"
+        }
+      }
 
-//    if (!this.options.texts) return '';
+      }
 
-//    var text = this.options.texts[text];
+    it("returns the rendered text", function() {
+      expect(display.call(context,'hello','world')).toBe("Hello world");
+      expect(display.call(context,'records')).toBe("results");
 
-//    if (text && value)
-//      text = text.replace(/{.+}/,value);
+    });
 
-//     return text;
-// }
 
+
+});

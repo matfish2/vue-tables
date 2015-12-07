@@ -13,13 +13,13 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 # Dependencies
 
-* JQuery. Required Globally.
+* JQuery. Required globally.
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
 
 # Installation
 
-## Option 1
+## Option 1 - Recommended
 
     npm install vue-tables
 
@@ -29,7 +29,7 @@ Require the script:
 
 ## Option 2
 
-Simply import the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-tables.min.js) into your HTML, which will expose a global `VueTables` variable.
+Import the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-tables/master/dist/vue-tables.min.js) into your HTML, which will expose a global `VueTables` variable.
 
 # Usage
 
@@ -60,17 +60,12 @@ Create a new Vue instance (You can also nest it within other components). An exa
           {id:5, name:"Dan",age:"40"}
         ],
         options: {
-             headings: {
-              id:'ID',
-              name:'Name',
-              age:'Age'
-          }
+          columns:['id','name','age']
         }
       }
     });
 
   Note: you must pass an `id` field as it is used to track the data for faster rendering.
-  Of course you don't have to show it. See below the `columns` option.
 
   [Check out the live client-side demo](https://jsfiddle.net/matfish2/f5h8xwgn/)
 
@@ -86,14 +81,10 @@ Javascript:
         el:"#people",
         data: {
           options: {
-            headings: {
-              id:'ID',
-              name:'Name',
-              age:'Age'
-            }
+           columns:['id','name','age']
          }
       }
-      });
+    });
 
   All the data is passed in the following GET parameters: `query`,`limit`,`page`,`orderBy`,`ascending`,`byColumn`.
   You need to return a JSON object with two properties:
