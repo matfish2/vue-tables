@@ -34,10 +34,8 @@ Class EloquentVueTables implements VueTablesInterface  {
       $data->limit($limit)
       ->skip($limit * ($page-1));
 
-      if (isset($orderBy) && $orderBy):
-        $direction = $ascending==1?"ASC":"DESC";
+      $direction = $ascending==1?"ASC":"DESC";
       $data->orderBy($orderBy,$direction);
-      endif;
 
       $results = $data->get()->toArray();
 
