@@ -19,7 +19,7 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 # Installation
 
-## Option 1 - Recommended
+## Option 1 - Using `browserify` with the `stringify` transform
 
     npm install vue-tables
 
