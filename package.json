@@ -22,11 +22,6 @@
   },
   "licenses": "MIT",
   "main": "index.js",
-  "browserify": {
-    "transform": [
-      "stringify"
-    ]
-  },
   "tonicExampleFilename": "tonic-example.js",
   "scripts": {
     "build-min": "browserify -t stringify index.js --s VueTables | uglifyjs -c > dist/vue-tables.min.js"
@@ -42,7 +37,6 @@
     "proxyquire": "^1.7.3",
     "proxyquire-universal": "^1.0.8",
     "proxyquireify": "^3.0.0",
-    "stringify": "^3.2.0",
     "vue": "^1.0.10"
   }
 }
