@@ -1,7 +1,7 @@
 {
   "name": "vue-tables",
   "description": "Vue.js grid components",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "keywords": [
     "vue",
     "bootstrap",
@@ -17,8 +17,10 @@
     "tonic-example.js"
   ],
   "dependencies": {
+    "dateformat": ">=1.0.12",
+    "merge": "^1.2.0",
     "vue": ">=1.0",
-    "dateformat": ">=1.0.12"
+    "vue-resource": "^0.6.1"
   },
   "licenses": "MIT",
   "main": "index.js",

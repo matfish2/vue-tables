@@ -13,7 +13,6 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 # Dependencies
 
-* JQuery. Required globally.
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
 
