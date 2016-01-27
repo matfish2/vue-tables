@@ -1,9 +1,8 @@
 describe('client tables with various options, ensure instance independency', function(){
-
+  require('daterangepicker/daterangepicker');
   var draw_table = require('../helpers/draw-table');
   var get_els = require('../helpers/get-els');
   data = require('../helpers/people.js')();
-  data[0].date = new Date(2013,0,1);
 
   var table1 = "table1";
   var table2 = "table2";
@@ -19,7 +18,7 @@ describe('client tables with various options, ensure instance independency', fun
       headings: {
         id:"Identifier"
       },
-      columns:['id','name','date'],
+      columns:['id','name','birth_date'],
       templates:{
         name: "<b @click='notCompiled()'>{name} is {age} years old</b>"
       },
@@ -30,7 +29,7 @@ describe('client tables with various options, ensure instance independency', fun
       filterBy: "Search {column}" // Placeholder for search fields when filtering by column
     },
     skin:'table-bordered',
-    dateFormat:'yyyy',
+    dateFormat:'YYYY',
     footerHeadings:true
     });
 
@@ -58,7 +57,8 @@ describe('client tables with various options, ensure instance independency', fun
       orderBy: {
         column:'age',
         ascending:false
-      }
+      },
+      dateColumns: ['birth_date']
     });
 
     setTimeout(function(){
@@ -73,7 +73,7 @@ it('columns', function() {
 
  expect(t1.headings.eq(0).text()).toBe('Identifier');
  expect(t1.headings.eq(1).text()).toBe('Name');
- expect(t1.headings.eq(2).text()).toBe('Date');
+ expect(t1.headings.eq(2).text()).toBe('Birth date');
 
  expect(t2.headings.eq(0).text()).toBe('Index');
  expect(t2.headings.eq(1).text()).toBe('der Name');
@@ -141,9 +141,9 @@ it("orderBy", function() {
 });
 
 it("dateFormat", function() {
+
   expect(t1.rows.eq(0).find("td").eq(2).text()).toBe("2013");
-  expect(t2.rows.eq(8).find("td").eq(3).text()).toBe("Tue Jan 01 2013 00:00:00");
-});
+ });
 
 it("pagination.chunk", function() {
   expect(t1.paginationLinks.length).toBe(9); // 5 + 2 + 2
@@ -159,6 +159,10 @@ it("pagination.dropdown", function() {
 it('footerHeadings', function() {
   expect(t1.table.find("tfoot").length).toBe(1);
   expect(t2.table.find("tfoot").length).toBe(0);
+});
+
+it('dateColumns', function() {
+//  expect(t1.table.find("thead").find("tr").eq(1).find("td").eq(2).find("input[type=date]").length).toBe(1);
 });
 
   afterAll(function(){

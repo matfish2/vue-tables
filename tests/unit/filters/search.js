@@ -5,7 +5,8 @@ describe('it filters down the data according to the query', function() {
 
   var context = {
     options: {
-      filterByColumn:false
+      filterByColumn:false,
+      dateColumns:[]
     },
     queryable: ['id','age','name']
   }

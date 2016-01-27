@@ -46,11 +46,18 @@
    <tr v-if="options.filterByColumn" class="VueTables__filters-row">
     <th v-for="column in columns">
       <input @keyup="search()"
-             v-if="customColumns.indexOf(column)==-1"
+             v-if="options.dateColumns.indexOf(column)==-1 && customColumns.indexOf(column)==-1"
              class="form-control"
              type="text"
              placeholder="{{display('filterBy',getHeading(column))}}"
+             name="{{column}}"
              v-model="query[column]">
+
+              <input @keyup="search()"
+             v-if="options.dateColumns.indexOf(column)>-1"
+             class="form-control"
+             placeholder="{{display('filterBy',getHeading(column))}}"
+             name="{{column}}">
     </th>
   </tr>
 </thead>
