@@ -19,7 +19,11 @@ Class EloquentVueTables implements VueTablesInterface  {
 
       if ($byColumn==1):
        foreach ($query as $field=>$q):
-         $data->where($field,'LIKE',"%{$q}%");
+         if (is_string($query)) {
+         $data->where($field,'LIKE',"%{$query}%");
+        } else {
+          $data->whereBetween($field,[$query['start'], $query['end']]);
+        }
        endforeach;
        else:
         foreach ($fields as $index=>$field):
