@@ -1,13 +1,10 @@
 <?php
-/**
- *  VueTables server-side component Eloquent implementation
- */
 
 namespace App\Services\VueTables;
 
 use Input;
 
-Class EloquentVueTables implements VueTablesInterface  {
+Class EloquentVueTables  implements VueTablesInterface  {
 
   public function get($model, Array $fields) {
 
@@ -18,8 +15,8 @@ Class EloquentVueTables implements VueTablesInterface  {
     if (isset($query) && $query) {
 
       if ($byColumn==1):
-       foreach ($query as $field=>$q):
-         if (is_string($query)) {
+       foreach ($query as $field=>$query):
+        if (is_string($query)) {
          $data->where($field,'LIKE',"%{$query}%");
         } else {
           $data->whereBetween($field,[$query['start'], $query['end']]);
@@ -38,8 +35,10 @@ Class EloquentVueTables implements VueTablesInterface  {
       $data->limit($limit)
       ->skip($limit * ($page-1));
 
-      $direction = $ascending==1?"ASC":"DESC";
+      if (isset($orderBy) && $orderBy):
+        $direction = $ascending==1?"ASC":"DESC";
       $data->orderBy($orderBy,$direction);
+      endif;
 
       $results = $data->get()->toArray();
 
