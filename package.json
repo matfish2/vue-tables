@@ -1,7 +1,7 @@
 {
   "name": "vue-tables",
   "description": "Vue.js grid components",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "keywords": [
     "vue",
     "bootstrap",
@@ -31,7 +31,7 @@
   "main": "index.js",
   "tonicExampleFilename": "tonic-example.js",
   "scripts": {
-    "build-min": "browserify -t stringify index.js --s VueTables | uglifyjs -c > dist/vue-tables.min.js"
+    "build-min": "browserify index.js --s VueTables | uglifyjs -c > dist/vue-tables.min.js"
   },
   "devDependencies": {
     "daterangepicker": "0.0.3",
