@@ -4,13 +4,6 @@
 
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
-### Release note for version 1.1.4:
-
-When filtering by column it is now possible to filter dates using the [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker) plugin, rather than an open text field (see the new `dateColumns` and `datepickerOptions` options).
-Dates should now be passed to the client component as [moment](http://momentjs.com) objects, and the `dateFormat` option now refers to moment's conventions.
-On the server component the date query is sent to the server as an array containing `start` and `end` values. Dates are sent in a 'YYYY-MM-DD' format.
-I've also updated the [Eloquent class](https://github.com/matfish2/vue-tables/blob/master/server/PHP/EloquentVueTables.php) to reflect this new feature.
-
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
