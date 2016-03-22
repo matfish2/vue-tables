@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables) [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg)](https://travis-ci.org/matfish2/vue-tables)
 
+Relase note v1.1.7: Due to collision issues `vue-resource` should now be included and registered by the consumer, before using the server-side component.
+
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
 - [Dependencies](#dependencies)
@@ -15,10 +17,13 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
+* vue-resource (server-side component only)
 
 # Installation
 
-## Option 1 - Using `browserify` with the `stringify` transform
+## Option 1
+
+Compile the code using `browserify` with the `stringify` transform, or [webpack](https://github.com/matfish2/vue-tables/issues/23)
 
     npm install vue-tables
 
@@ -35,6 +40,10 @@ Import the [compiled standalone file](https://raw.githubusercontent.com/matfish2
 ## Register the component(s)
 
     Vue.use(VueTables.client, options);
+
+  Or/And
+
+    Vue.use(require('vue-resource'));
     Vue.use(VueTables.server, options);
 
 ## Client Side
@@ -107,8 +116,6 @@ You can listen to those complementary events on a parent component and use them 
 ### Programmatic reload
 
 At times you might want to refresh the data as a reaction to data alteration on the server-side. To do so hunt down the component's instance using `$parent` and `$children` and call the `refresh()` method on it.
-
-  [Check out the live server-side demo, including a code sample](http://ucantourit.co.il/vt-demo.php)
 
 ### Implementations
 
