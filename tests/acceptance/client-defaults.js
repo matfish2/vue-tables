@@ -73,9 +73,9 @@ it('shows the default rows per page', function() {
 
 });
 
-it('display the correct number of pages', function() {
-  expect(els.paginationLinks.length).toBe(14); // 10 + 2 prev + 2 next
-});
+// it('display the correct number of pages', function() {
+//   expect(els.paginationLinks.length).toBe(14); // 10 + 2 prev + 2 next
+// });
 
   afterAll(function(){
    $("#" + entity).remove();
