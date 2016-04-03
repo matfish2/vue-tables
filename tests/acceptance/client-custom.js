@@ -145,11 +145,11 @@ it("dateFormat", function() {
   expect(t1.rows.eq(0).find("td").eq(2).text()).toBe("2013");
  });
 
-// it("pagination.chunk", function() {
-//   expect(t1.paginationLinks.length).toBe(9); // 5 + 2 + 2
-//   expect($("#table1 .VueTables__dropdown-pagination").length).toBe(0);
+it("pagination.chunk", function() {
+  expect(t1.paginationLinks.length).toBe(9); // 5 + 2 + 2
+  expect($("#table1 .VueTables__dropdown-pagination").length).toBe(0);
 
-// });
+});
 
 it("pagination.dropdown", function() {
   expect(t2.paginationLinks.length).toBe(0);

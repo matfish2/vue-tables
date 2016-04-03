@@ -105,7 +105,7 @@ v-bind:class="pageNavDisabled(-1)?'disabled':''">
 </li>
 
 <li class="VueTables__pagination-item"
-v-for="page in options.pagination.chunk"
+v-for="page in pages"
 v-if="paginationStart + $index <= totalPages"
 v-bind:class="active(paginationStart + $index - 1)">
 <a href="javascript:void(0);"
