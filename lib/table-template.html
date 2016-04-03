@@ -106,7 +106,7 @@ v-bind:class="pageNavDisabled(-1)?'disabled':''">
 
 <li class="VueTables__pagination-item"
 v-for="page in pages"
-v-if="paginationStart + page <= totalPages"
+v-if="paginationStart + (page-1) <= totalPages"
 v-bind:class="active(paginationStart + $index - 1)">
 <a href="javascript:void(0);"
 @click="setPage(paginationStart + $index)">{{paginationStart + $index}}</a>
