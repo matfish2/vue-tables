@@ -125,7 +125,7 @@ it("texts", function() {
 
 expect(t1.table.find("thead").find("tr").eq(1).find("th").eq(0).find("input").prop("placeholder")).toBe("Search Identifier");
 expect(t1.limit.find("label").text()).toBe("Per page:");
-expect($("#table1 .VueTables__count").eq(0).text()).toBe("100 Results");
+expect($("#table1 .VuePagination__count").eq(0).text()).toBe("100 Results");
 
 });
 

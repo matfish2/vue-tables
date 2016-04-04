@@ -16,7 +16,7 @@ describe('Draws a client-side table', function(){
 });
 
 it('counts the columns', function(){
-  var countText = $("#" + entity + " .VueTables__count").eq(0).text();
+  var countText = $("#" + entity + " .VuePagination__count").eq(0).text();
   expect(countText).toBe("100 Records");
 })
 

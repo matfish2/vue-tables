@@ -1,7 +1,7 @@
 {
   "name": "vue-tables",
   "description": "Vue.js grid components",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "keywords": [
     "vue",
     "bootstrap",
@@ -19,6 +19,7 @@
   "dependencies": {
     "merge": "^1.2.0",
     "moment": "^2.11.1",
+    "v-pagination": "0.0.3",
     "vue": ">=1.0",
     "vue-resource": "^0.6.1"
   },
