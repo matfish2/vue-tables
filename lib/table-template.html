@@ -56,7 +56,7 @@
                     <div class="VueTables__date-filter"
              id="VueTables__{{column}}-filter"
              v-if="options.dateColumns.indexOf(column)>-1">
-    {{display('filterBy',getHeading(column))}}
+    <span class="VueTable__filter-placeholder">{{display('filterBy',getHeading(column))}}</span>
              </div>
     </th>
   </tr>
