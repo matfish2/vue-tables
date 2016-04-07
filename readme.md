@@ -2,7 +2,10 @@
 
 [![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables) [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg)](https://travis-ci.org/matfish2/vue-tables)
 
-Relase note v1.1.7: Due to collision issues `vue-resource` should now be included and registered by the consumer, before using the server-side component.
+Relase note v1.2.1:
+
+* Date filters are now `div` elements rather than `input`s, and the daterangepicker `cancel` button was renamed, and now serves to clear the query.
+* A new `toMomentFormat` option was added. It accepts a `moment` date format. When used one can pass plain date strings to date columns and the plugin will transform them to filterable and comparable `moment` objects.
 
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
