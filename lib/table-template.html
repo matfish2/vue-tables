@@ -6,7 +6,7 @@
         <input class="form-control"
         type="text"
         placeholder="{{display('filterPlaceholder')}}"
-        @keyup="search()"
+        @keydown="search()"
         v-model="query"/>
       </div>
     </div>
@@ -45,21 +45,23 @@
    </tr>
    <tr v-if="options.filterByColumn" class="VueTables__filters-row">
     <th v-for="column in columns">
-      <input @keydown="search()"
-      v-if="options.dateColumns.indexOf(column)==-1 && customColumns.indexOf(column)==-1"
-      class="form-control"
-      type="text"
-      placeholder="{{display('filterBy',getHeading(column))}}"
-      name="{{column}}"
-      v-model="query[column]">
+      <div class="VueTables__column-filter" v-if="filterable(column)">
+        <input @keydown="search()"
+        v-if="options.dateColumns.indexOf(column)==-1"
+        class="form-control"
+        type="text"
+        placeholder="{{display('filterBy',getHeading(column))}}"
+        name="{{column}}"
+        v-model="query[column]">
 
-                    <div class="VueTables__date-filter"
-             id="VueTables__{{column}}-filter"
-             v-if="options.dateColumns.indexOf(column)>-1">
-    <span class="VueTables__filter-placeholder">{{display('filterBy',getHeading(column))}}</span>
-             </div>
-    </th>
-  </tr>
+        <div class="VueTables__date-filter"
+        id="VueTables__{{column}}-filter"
+        v-if="options.dateColumns.indexOf(column)>-1">
+        <span class="VueTables__filter-placeholder">{{display('filterBy',getHeading(column))}}</span>
+      </div>
+    </div>
+  </th>
+</tr>
 </thead>
 <tfoot v-if="options.footerHeadings">
  <tr>
@@ -97,7 +99,7 @@
 
 <div v-if="count>0 && options.pagination.dropdown" class="VuePagination">
   <p class="VuePagination__count">{{display('count', count)}}</p>
-  </div>
+</div>
 
 </div>
 
