@@ -2,11 +2,6 @@
 
 [![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables) [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg)](https://travis-ci.org/matfish2/vue-tables)
 
-Relase note v1.2.1:
-
-* Date filters are now `div` elements rather than `input`s, and the daterangepicker `cancel` button was renamed, and now serves to clear the query.
-* A new `toMomentFormat` option was added. It accepts a `moment` date format. When used one can pass plain date strings to date columns and the plugin will transform them to filterable and comparable `moment` objects.
-
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
 - [Dependencies](#dependencies)
@@ -14,6 +9,7 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 - [Usage](#usage)
     - [Client Side](#client-side)
     - [Server Side](#server-side)
+- [Custom Filters](#custom-filters)
 - [Options](#options)
 
 # Dependencies
@@ -135,6 +131,36 @@ At times you might want to refresh the data as a reaction to data alteration on 
 
   e. TEST IT.
 
+# Custom Filters
+
+Custom filters allow you to integrate your own filters into the plugin using Vue's events system.
+
+## Client Side Filters
+
+A. use the `customFilters` option to declare your filters, following this syntax:
+
+      customFilters: [
+        {
+          name:'alphabet',
+          callback: function(row, query) {
+            return row.name[0] == query;
+        }
+        }
+      ]
+
+B. On your application broadcast an event when a filter was applied, and pass the query:
+
+      this.$broadcast('vue-tables.filter::alphabet', query);
+
+## Server Side Filters
+
+A. use the `customFilters` option to declare your filters, following this syntax:
+
+      customFilters: ['alphabet','age-range']
+
+B. the same as in the client component.
+
+The queries will be sent as part of the request in a `customQueries` array, where the key is the filter name, and the value is the current query.
 
 # Options
 
