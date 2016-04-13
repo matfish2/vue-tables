@@ -74,6 +74,8 @@ Create a new Vue instance (You can also nest it within other components). An exa
 
   Note: you must pass an `id` field as it is used to track the data for faster rendering.
 
+  Important: when loading data asynchronously add a `v-if` conditional to the component along with some `loaded` flag, so it will only compile once the data is attached.
+
   [Check out the live client-side demo](https://jsfiddle.net/matfish2/f5h8xwgn/)
 
 ## Server side
