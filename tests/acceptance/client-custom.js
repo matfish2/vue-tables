@@ -10,7 +10,7 @@ describe('client tables with various options, ensure instance independency', fun
   var defaults = require('../../lib/config/defaults')();
 
   beforeAll(function(done){
-    vm1 = draw_table(table1, data, {
+    vm1 = draw_table(table1, data, ['id','name','birth_date'],{
       filterByColumn:true,
       pagination:{
         chunk:5
@@ -18,7 +18,6 @@ describe('client tables with various options, ensure instance independency', fun
       headings: {
         id:"Identifier"
       },
-      columns:['id','name','birth_date'],
       templates:{
         name: "<b @click='notCompiled()'>{name} is {age} years old</b>"
       },
@@ -33,7 +32,7 @@ describe('client tables with various options, ensure instance independency', fun
     footerHeadings:true
     });
 
-    vm2 = draw_table(table2, data, {
+    vm2 = draw_table(table2, data, ['id','name','age'],{
       pagination: {
         dropdown:true
       },
@@ -106,15 +105,15 @@ it('filterByColumn',function() {
 
 it('templates', function() {
 expect(t1.headings.eq(3).length).toBe(0);
-expect(t2.headings.eq(4).text()).toBe('Custom');
+expect(t2.headings.eq(3).text()).toBe('Custom');
 
 expect(t1.rows.eq(3).find("td").eq(1).find("span").html()).toBe('<b @click="notCompiled()">Miss Laury Farrell is 71 years old</b>');
-expect(t2.rows.eq(0).find("td").eq(4).text()).toBe("49:119");
+expect(t2.rows.eq(0).find("td").eq(3).text()).toBe("49:119");
 
 });
 
 it("compileTemplates", function() {
-expect(t2.rows.eq(1).find("td").eq(4).html()).toBe('<span class="VueTables__template"><i>41:117</i></span>');
+expect(t2.rows.eq(1).find("td").eq(3).html()).toBe('<span class="VueTables__template"><i>41:117</i></span>');
 });
 
 it("texts", function() {

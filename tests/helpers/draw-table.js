@@ -1,4 +1,4 @@
-  module.exports = function (id, data, options, isServer) {
+  module.exports = function (id, data, columns, options, isServer) {
     var type = isServer?'server':'client';
     var dataProp = type=='client'?':data="tableData"':'url="/people"';
    // var proxyquire = require('proxyquireify')(require);
@@ -10,7 +10,7 @@
 
     options = options?options:{};
     $ = require('jquery');
-    component = $('<div id="' + id + '"><h1>'+id+'</h1><v-' + type + '-table ' + dataProp + ' :options="options"></v-' + type + '-table></div>');
+    component = $('<div id="' + id + '"><h1>'+id+'</h1><v-' + type + '-table ' + dataProp + ' :options="options" :columns="columns"></v-' + type + '-table></div>');
 
     $(document.body).append(component);
 
@@ -23,7 +23,8 @@
       el:"#" +id,
       data: {
        tableData:data,
-       options: options
+       options: options,
+       columns:columns
     }
   });
 

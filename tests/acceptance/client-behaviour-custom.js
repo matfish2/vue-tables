@@ -9,7 +9,7 @@ describe('user interaction - custom', function(){
   var defaults = require('../../lib/config/defaults')();
 
   beforeAll(function(done){
-    vm = draw_table(entity, data, {
+    vm = draw_table(entity, data,['id','name','age'], {
       filterByColumn:true,
       highlightMatches:true,
       pagination: {

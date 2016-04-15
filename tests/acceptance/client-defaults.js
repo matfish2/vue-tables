@@ -8,7 +8,7 @@ describe('Draws a client-side table', function(){
   var defaults = require('../../lib/config/defaults')();
 
   beforeAll(function(done){
-    draw_table(entity, data, {});
+    draw_table(entity, data,['id','name','age'], {});
     setTimeout(function(){
      els = get_els($("#"+entity));
       done();

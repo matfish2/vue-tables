@@ -4,6 +4,12 @@
 
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
+Version 1.4.0 release note:
+
+A breaking change has been introduced to this version.
+Columns are no longer passed as an option to the `options` prop.
+They should now be passed to the component as a required `columns` prop.
+
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -51,7 +57,7 @@ Add the following element to your page wherever you want it to render.
 Make sure to wrap it with a parent element you can latch your vue instance into.
 
     <div id="people">
-      <v-client-table :data="tableData" :options="options"></v-client-table>
+      <v-client-table :data="tableData" :columns="columns" :options="options"></v-client-table>
     </div>
 
 Create a new Vue instance (You can also nest it within other components). An example works best to illustrate the syntax:
@@ -59,6 +65,7 @@ Create a new Vue instance (You can also nest it within other components). An exa
     new Vue({
       el:"#people",
       data: {
+        columns:['id','name','age'],
         tableData: [
           {id:1, name:"John",age:"20"},
           {id:2, name:"Jane",age:"24"},
@@ -67,7 +74,7 @@ Create a new Vue instance (You can also nest it within other components). An exa
           {id:5, name:"Dan",age:"40"}
         ],
         options: {
-          columns:['id','name','age']
+          // see the options API
         }
       }
     });
@@ -81,7 +88,7 @@ Create a new Vue instance (You can also nest it within other components). An exa
 ## Server side
 
     <div id="people">
-      <v-server-table url="/people" :options="options"></v-server-table>
+      <v-server-table url="/people" :columns="columns" :options="options"></v-server-table>
     </div>
 
 Javascript:
@@ -89,8 +96,9 @@ Javascript:
     new Vue({
         el:"#people",
         data: {
+          columns:['id','name','age'],
           options: {
-           columns:['id','name','age']
+           // see the options API
          }
       }
     });

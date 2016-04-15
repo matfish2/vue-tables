@@ -37,14 +37,14 @@
   <thead>
     <tr>
      <th @click="orderByColumn(column)"
-     v-for="column in columns"
+     v-for="column in allColumns"
      v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
      <span v-if="sortable(column)"
      class="VueTables__sort-icon glyphicon pull-right"
      v-bind:class="sortableChevronClass(column)"></span></th>
    </tr>
    <tr v-if="options.filterByColumn" class="VueTables__filters-row">
-    <th v-for="column in columns">
+    <th v-for="column in allColumns">
       <div class="VueTables__column-filter" v-if="filterable(column)">
         <input @keydown="search()"
         v-if="options.dateColumns.indexOf(column)==-1"
@@ -66,7 +66,7 @@
 <tfoot v-if="options.footerHeadings">
  <tr>
    <th @click="orderByColumn(column)"
-   v-for="column in columns"
+   v-for="column in allColumns"
    v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
    <span v-if="sortable(column)"
    class="VueTables__sort-icon glyphicon pull-right"
@@ -75,14 +75,14 @@
 </tfoot>
 <tbody v-el:tbody>
  <tr v-for="row in data [[rowFilters]]" [[trackBy]]>
-   <td v-for="column in columns"
+   <td v-for="column in allColumns"
    v-html="row[column] | render row column [[columnFilters]]"></td>
  </tr>
 
  <tr v-if="count==0"
  class="VueTables__no-results">
  <td class="text-center"
- colspan="{{columns.length}}">
+ colspan="{{allColumns.length}}">
  {{display('noResults')}}
 </td>
 </tr>

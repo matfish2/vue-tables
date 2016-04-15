@@ -9,7 +9,7 @@ describe('renders the template', function() {
       }
     },
      templatesKeys:['custom'],
-     allColumns:['id','age','name']
+     allKeys:['id','age','name']
     };
 
   it('should return the rendered template', function() {

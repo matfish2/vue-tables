@@ -8,7 +8,7 @@ describe('it filters down the data according to the query', function() {
       filterByColumn:false,
       dateColumns:[]
     },
-    queryable: ['id','age','name']
+    columns: ['id','age','name']
   }
   it('should return a filtered set of results when using a generic filter', function() {
 

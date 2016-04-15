@@ -9,7 +9,7 @@ describe('user interaction - default', function(){
   var defaults = require('../../lib/config/defaults')();
 
   beforeAll(function(done){
-    vm = draw_table(entity, data, {});
+    vm = draw_table(entity, data,['id', 'name','age'], {});
     setTimeout(function(){
      els = get_els($("#"+entity));
       done();
