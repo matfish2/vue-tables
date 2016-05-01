@@ -68,7 +68,7 @@
    v-for="column in allColumns"
    v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
    <span v-if="sortable(column)"
-   class="VueTables__sort-icon glyphicon pull-right"
+   class="VueTables__sort-icon {{options.sortIcon.base}} pull-right"
    v-bind:class="sortableChevronClass(column)"></span></th>
  </tr>
 </tfoot>
