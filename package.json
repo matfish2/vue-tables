@@ -1,7 +1,7 @@
 {
   "name": "vue-tables",
   "description": "Vue.js grid components",
-  "version": "1.4.16",
+  "version": "1.4.17",
   "keywords": [
     "vue",
     "bootstrap",
@@ -13,6 +13,7 @@
     "url": "https://github.com/matfish2/vue-tables"
   },
   "files": [
+    "index.js",
     "lib",
     "tonic-example.js"
   ],
