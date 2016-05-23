@@ -123,6 +123,17 @@ You can listen to those complementary events on a parent component and use them 
 ### Programmatic reload
 
 At times you might want to refresh the data as a reaction to data alteration on the server-side. To do so hunt down the component's instance using `$parent` and `$children` and call the `refresh()` method on it.
+Server-side example using refs:
+
+     <div id="people">
+       <v-server-table url="/people" :columns="columns" :options="options" v-ref:table></v-server-table>
+     </div>
+     
+Then inside your component call:
+
+     this.$refs.table.refresh();
+     
+For further details regarding `refs` please [see vue documentation](https://vuejs.org/guide/components.html#Child-Component-Refs)
 
 ### Implementations
 
