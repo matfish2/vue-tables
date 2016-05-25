@@ -16,6 +16,7 @@ They should now be passed to the component as a required `columns` prop.
     - [Client Side](#client-side)
     - [Server Side](#server-side)
 - [Custom Filters](#custom-filters)
+- [List Filters](#list-filters)
 - [Options](#options)
 
 # Dependencies
@@ -169,6 +170,25 @@ A. use the `customFilters` option to declare your filters, following this syntax
 B. the same as in the client component.
 
 The queries will be sent as part of the request in a `customQueries` array, where the key is the filter name, and the value is the current query.
+
+# List Filters
+
+the `listColumns` option allows for filtering columns whose values are part of a list, using a select box, instead of the free text filter.
+
+For example:
+
+      options: {
+        listColumn:{
+          animal: [
+            {value:1, text:'Dog'},
+            {value:2, text:'Cat'},
+            {value:3, text:'Tiger'},
+            {value:4, text:'Bear'}
+          ]
+        }
+      }
+
+The values for this column should correspond to the values passed to the list. They will be automatically converted to their textual representation.
 
 # Options
 
