@@ -189,7 +189,7 @@ When filtering by column, the `listColumns` option allows for filtering columns 
 For example:
 
       options: {
-        listColumn:{
+        listColumns:{
           animal: [
             {value:1, text:'Dog'},
             {value:2, text:'Cat'},
