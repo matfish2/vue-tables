@@ -173,7 +173,7 @@ The queries will be sent as part of the request in a `customQueries` array, wher
 
 # List Filters
 
-the `listColumns` option allows for filtering columns whose values are part of a list, using a select box, instead of the free text filter.
+When filtering by column, the `listColumns` option allows for filtering columns whose values are part of a list, using a select box instead of the default free-text filter.
 
 For example:
 
@@ -188,7 +188,8 @@ For example:
         }
       }
 
-The values for this column should correspond to the values passed to the list. They will be automatically converted to their textual representation.
+The values of this column should correspond to the values passed to the list.
+They will be automatically converted to their textual representation.
 
 # Options
 
