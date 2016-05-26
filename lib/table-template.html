@@ -6,7 +6,7 @@
         <input class="form-control"
         type="text"
         placeholder="{{display('filterPlaceholder')}}"
-        @keydown="search()"
+        @keydown="search() | debounce options.delay"
         v-model="query"/>
       </div>
     </div>
@@ -46,7 +46,7 @@
    <tr v-if="options.filterByColumn" class="VueTables__filters-row">
     <th v-for="column in allColumns">
       <div class="VueTables__column-filter VueTables__{{column}}-filter-wrapper" v-if="filterable(column)">
-        <input @keydown="search()"
+        <input @keydown="search() | debounce options.delay"
         v-if="isTextFilter(column)"
         class="form-control"
         type="text"
