@@ -9,7 +9,7 @@ Class EloquentVueTables  implements VueTablesInterface  {
 
   public function get($model, Array $fields) {
 
-    extract(Input::all());
+    extract(Input::only('query', 'limit', 'page', 'orderBy', 'ascending', 'byColumn'));
 
     $data = $model->select($fields);
 
