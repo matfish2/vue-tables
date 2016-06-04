@@ -85,7 +85,7 @@
  </tr>
 </tfoot>
 <tbody v-el:tbody>
- <tr v-for="row in data [[rowFilters]]" [[trackBy]]>
+ <tr v-for="row in data [[rowFilters]]" [[trackBy]] @click='options.onRowClick(row)'>
    <td v-for="column in allColumns"
    v-html="row[column] | render row column [[columnFilters]]"></td>
  </tr>
