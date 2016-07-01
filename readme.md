@@ -4,12 +4,6 @@
 
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
-Version 1.4.0 release note:
-
-A breaking change has been introduced to this version.
-Columns are no longer passed as an option to the `options` prop.
-They should now be passed to the component as a required `columns` prop.
-
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
