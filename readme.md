@@ -17,7 +17,7 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
-* vue-resource (server-side component only)
+* vue-resource (>=0.9.0) (server-side component only)
 
 # Installation
 
