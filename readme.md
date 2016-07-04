@@ -1,6 +1,6 @@
 # Vue Tables
 
-[![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables)
+[![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables) [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg?branch=master)](https://travis-ci.org/matfish2/vue-tables)
 
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
@@ -173,8 +173,6 @@ A. use the `customFilters` option to declare your filters, following this syntax
       customFilters: ['alphabet','age-range']
 
 B. the same as in the client component.
-
-The queries will be sent as part of the request in a `customQueries` array, where the key is the filter name, and the value is the current query.
 
 # List Filters
 
