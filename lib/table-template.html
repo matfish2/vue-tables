@@ -66,7 +66,7 @@
                 @change="search()"
                 v-model="query[column]">
           <option value="">{{display('defaultOption',getHeading(column))}}</option>
-          <option v-for="option in options.listColumns[column]" value="{{option.value}}">{{option.text}}</option>
+          <option v-for="option in options.listColumns[column]" value="{{option.id}}">{{option.text}}</option>
         </select>
       </div>
 
@@ -85,9 +85,9 @@
  </tr>
 </tfoot>
 <tbody v-el:tbody>
- <tr v-for="(rowIndex, row) in data [[rowFilters]]" [[trackBy]] @click='options.onRowClick(row)'>
+ <tr v-for="row in data [[rowFilters]]" [[trackBy]] @click='options.onRowClick(row)'>
    <td v-for="column in allColumns"
-   v-html="row[column] | render row column rowIndex [[columnFilters]]"></td>
+   v-html="row[column] | render row column [[columnFilters]]"></td>
  </tr>
 
  <tr v-if="count==0"
