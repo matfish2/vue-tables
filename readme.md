@@ -183,15 +183,15 @@ For example:
       options: {
         listColumns:{
           animal: [
-            {value:1, text:'Dog'},
-            {value:2, text:'Cat'},
-            {value:3, text:'Tiger'},
-            {value:4, text:'Bear'}
+            {id:1, text:'Dog'},
+            {id:2, text:'Cat'},
+            {id:3, text:'Tiger'},
+            {id:4, text:'Bear'}
           ]
         }
       }
 
-The values of this column should correspond to the values passed to the list.
+The values of this column should correspond to the values (`id`) passed to the list.
 They will be automatically converted to their textual representation.
 
 # Options
