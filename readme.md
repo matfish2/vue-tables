@@ -46,6 +46,10 @@ Import the [compiled standalone file](https://raw.githubusercontent.com/matfish2
     Vue.use(require('vue-resource'));
     Vue.use(VueTables.server, options);
 
+If you wish to customize the table template itself, pass the altered version as the third argument, like so:
+
+    Vue.use(VueTables.client, {}, { template: require('./my-template.html') });
+
 ## Client Side
 
 Add the following element to your page wherever you want it to render.
