@@ -33,45 +33,46 @@
 </div>
 </div>
 
-<table class="VueTables__table table" v-bind:class="options.skin">
-  <thead>
-    <tr>
-     <th @click="orderByColumn(column)"
-     v-for="column in allColumns"
-     v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
-     <span v-if="sortable(column)"
-     class="VueTables__sort-icon pull-right"
-     v-bind:class="sortableChevronClass(column)"></span></th>
-   </tr>
-   <tr v-if="options.filterByColumn" class="VueTables__filters-row">
-    <th v-for="column in allColumns">
-      <div class="VueTables__column-filter VueTables__{{column}}-filter-wrapper" v-if="filterable(column)">
-        <input @keydown="search() | debounce options.delay"
-        v-if="isTextFilter(column)"
-        class="form-control"
-        type="text"
-        placeholder="{{display('filterBy',getHeading(column))}}"
-        v-model="query[column]">
+<div class="VueTables__table-wrapper" v-bind:class="options.wrapperClasses">
+  <table class="VueTables__table table" v-bind:class="options.skin">
+    <thead>
+      <tr>
+       <th @click="orderByColumn(column)"
+       v-for="column in allColumns"
+       v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
+       <span v-if="sortable(column)"
+       class="VueTables__sort-icon pull-right"
+       v-bind:class="sortableChevronClass(column)"></span></th>
+     </tr>
+     <tr v-if="options.filterByColumn" class="VueTables__filters-row">
+      <th v-for="column in allColumns">
+        <div class="VueTables__column-filter VueTables__{{column}}-filter-wrapper" v-if="filterable(column)">
+          <input @keydown="search() | debounce options.delay"
+          v-if="isTextFilter(column)"
+          class="form-control"
+          type="text"
+          placeholder="{{display('filterBy',getHeading(column))}}"
+          v-model="query[column]">
 
-        <div class="VueTables__date-filter"
-        id="VueTables__{{column}}-filter"
-        v-if="isDateFilter(column)">
-        <span class="VueTables__filter-placeholder">{{display('filterBy',getHeading(column))}}</span>
-      </div>
+          <div class="VueTables__date-filter"
+          id="VueTables__{{column}}-filter"
+          v-if="isDateFilter(column)">
+          <span class="VueTables__filter-placeholder">{{display('filterBy',getHeading(column))}}</span>
+        </div>
 
-      <div class="VueTables__list-filter"
+        <div class="VueTables__list-filter"
         id="VueTables__{{column}}-filter"
         v-if="isListFilter(column)">
         <select class='form-control'
-                @change="search()"
-                v-model="query[column]">
-          <option value="">{{display('defaultOption',getHeading(column))}}</option>
-          <option v-for="option in options.listColumns[column]" value="{{option.id}}">{{option.text}}</option>
-        </select>
-      </div>
-
+        @change="search()"
+        v-model="query[column]">
+        <option value="">{{display('defaultOption',getHeading(column))}}</option>
+        <option v-for="option in options.listColumns[column]" value="{{option.id}}">{{option.text}}</option>
+      </select>
     </div>
-  </th>
+
+  </div>
+</th>
 </tr>
 </thead>
 <tfoot v-if="options.footerHeadings">
@@ -99,6 +100,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <pagination v-ref:pagination v-if="options.pagination && !options.pagination.dropdown"
 :for="id"
