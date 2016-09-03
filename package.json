@@ -18,7 +18,6 @@
     "tonic-example.js"
   ],
   "dependencies": {
-    "array-intersection": "^0.1.2",
     "merge": "^1.2.0",
     "moment": "^2.11.1",
     "v-pagination": "^0.0",
