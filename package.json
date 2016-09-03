@@ -1,7 +1,7 @@
 {
   "name": "vue-tables",
   "description": "Vue.js grid components",
-  "version": "1.4.65",
+  "version": "1.4.66",
   "keywords": [
     "vue",
     "bootstrap",
@@ -18,6 +18,7 @@
     "tonic-example.js"
   ],
   "dependencies": {
+    "array-intersection": "^0.1.2",
     "merge": "^1.2.0",
     "moment": "^2.11.1",
     "v-pagination": "^0.0",
