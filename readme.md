@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables) [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg?branch=master)](https://travis-ci.org/matfish2/vue-tables)
 
+Note: In v1.5 the `onRowClick` callback was replaced by a `row-click` event.
+
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
 - [Dependencies](#dependencies)
@@ -17,7 +19,7 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
-* vue-resource (>=0.9.0) (server-side component only)
+* vue-resource (>=0.9.0 && < 1.0.0) (server-side component only)
 
 # Installation
 
@@ -109,15 +111,25 @@ Javascript:
 
 ### Events
 
-`vue-tables.loading`
+`vue-tables.loading` (server-side)
 
 Fires off when a request is sent to the server. Sends through the request data.
 
-`vue-tables.loaded`
+`vue-tables.loaded` (server-side)
 
 Fires off after the response data has been attached to the table. Sends through the response.
 
-You can listen to those complementary events on a parent component and use them to add and remove a *loading indicator*, respectively.
+-----
+You can listen to those two complementary events on a parent component and use them to add and remove a *loading indicator*, respectively.
+-----
+
+`vue-tables.error` (server-side)
+
+Fires off if the server returns an invalid code. Sends through the error
+
+`vue-tables.row-click`
+
+Fires off after a row was clicked. sends through the row
 
 ### Programmatic reload
 
