@@ -19,7 +19,7 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
-* vue-resource (>=0.9.0 && < 1.0.0) (server-side component only)
+* vue-resource (>=0.9.0 & < 1.0.0) (server-side component only)
 
 # Installation
 
@@ -119,9 +119,7 @@ Fires off when a request is sent to the server. Sends through the request data.
 
 Fires off after the response data has been attached to the table. Sends through the response.
 
------
 You can listen to those two complementary events on a parent component and use them to add and remove a *loading indicator*, respectively.
------
 
 `vue-tables.error` (server-side)
 
