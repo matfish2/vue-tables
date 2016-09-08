@@ -129,6 +129,10 @@ Fires off if the server returns an invalid code. Sends through the error
 
 Fires off after a row was clicked. sends through the row
 
+`vue-tables.filtered` (client-side)
+
+Fires off after a filter was applied to the dataset. Send through the filtered subset.
+
 ### Programmatic reload
 
 At times you might want to refresh the data as a reaction to data alteration on the server-side.

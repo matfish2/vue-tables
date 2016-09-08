@@ -5,10 +5,11 @@ describe('it filters down the data according to the query', function() {
 
   var context = {
     isListFilter:require('../../../lib/methods/is-list-filter'),
+    $dispatch: function() {},
     options: {
       listColumns:{},
       filterByColumn:false,
-      dateColumns:[]
+      dateColumns:[],
     },
     columns: ['id','age','name']
   }
