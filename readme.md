@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables) [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg?branch=master)](https://travis-ci.org/matfish2/vue-tables)
 
-Note: In v1.5 the `onRowClick` callback was replaced by a `row-click` event.
+Users of VueJs 2 please use [this package](https://github.com/matfish2/vue-tables-2) instead.
 
 This Vue package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming either from the client or from the server.
 
@@ -19,7 +19,7 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 * Vue.js (>=1.0). Required.
 * Bootstrap (CSS). Optional.
-* vue-resource (>=0.9.0 & < 1.0.0) (server-side component only)
+* vue-resource (>=0.9.0) (server-side component only)
 
 # Installation
 
