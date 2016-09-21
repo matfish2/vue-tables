@@ -36,10 +36,10 @@
 <div class="VueTables__table-wrapper" v-bind:class="options.wrapperClasses">
   <table class="VueTables__table table" v-bind:class="options.skin">
     <thead>
-      <tr>
+      <tr v-el:headings>
        <th @click="orderByColumn(column)"
        v-for="column in allColumns"
-       v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{getHeading(column)}}</span>
+       v-bind:class="sortableClass(column)"><span class="VueTables__heading">{{{getHeading(column)}}}</span>
        <span v-if="sortable(column)"
        class="VueTables__sort-icon pull-right"
        v-bind:class="sortableChevronClass(column)"></span></th>
