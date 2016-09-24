@@ -6,6 +6,7 @@ describe('it filters down the data according to the query', function() {
   var context = {
     isListFilter:require('../../../lib/methods/is-list-filter'),
     $dispatch: function() {},
+    initPagination: function() {},
     options: {
       listColumns:{},
       filterByColumn:false,
