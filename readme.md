@@ -17,7 +17,7 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 
 # Dependencies
 
-* Vue.js (>=1.0). Required.
+* Vue.js (>=1.0). Required. ([NOT 1.0.27](https://github.com/matfish2/vue-tables/issues/107))
 * Bootstrap (CSS). Optional.
 * vue-resource (>=0.9.0) (server-side component only)
 
