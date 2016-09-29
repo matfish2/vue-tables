@@ -1,7 +1,7 @@
 {
   "name": "vue-tables",
   "description": "Vue.js grid components",
-  "version": "1.5.9",
+  "version": "1.6.0",
   "keywords": [
     "vue",
     "bootstrap",
