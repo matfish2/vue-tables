@@ -29,14 +29,15 @@ it('filters the records and is case-insensitive', function(done) {
 
 });
 
-it('sets the page', function(done) {
-  user_event(function(vm) {
-    vm.page = 3;
-  }, function(els) {
-    expect(els.rows.eq(0).find("td").eq(1).text()).toBe("Jaida Rohan");
-    vm.page = 1;
-  }, done)
-});
+// it('sets the page', function(done) {
+
+//   user_event(function(vm) {
+//     vm.$children[0].setPage(3);
+//   }, function(els) {
+//     expect(els.rows.eq(0).find("td").eq(1).text()).toBe("Jaida Rohan");
+//     vm.$children[0].setPage(1);
+//   }, done)
+// });
 
 it('sets records per page', function(done) {
     user_event(function(vm) {
