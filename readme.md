@@ -11,6 +11,8 @@ This Vue package offers an easy and intuitive way of displaying Bootstrap-styled
 - [Usage](#usage)
     - [Client Side](#client-side)
     - [Server Side](#server-side)
+- [Methods](#methods)
+- [Events](#events)
 - [Custom Filters](#custom-filters)
 - [List Filters](#list-filters)
 - [Options](#options)
@@ -109,7 +111,30 @@ Javascript:
 
   `count` `number` - Total count before limit.
 
-### Events
+
+### Implementations
+
+  I have included [an Eloquent implementation](https://github.com/matfish2/vue-tables/tree/master/server/PHP) for Laravel Users.
+  If you happen to write other implementations for PHP or other languages, a pull request would be most welcome, under the following guidelines:
+
+  a. Include the class under `./server/{language}`.
+
+  b. Name it according to convention: `{concrete}VueTables`.
+
+  c. if this is the first implementation in this language add an interface similar to the one found in the PHP folder.
+
+  d. Have it implement the interface.
+
+  e. TEST IT.
+
+## Methods
+
+Use [refs](https://vuejs.org/api/#v-ref) to get the instance.
+
+* `setPage(page)`
+* `refresh()` - server component only
+
+## Events
 
 `vue-tables.loading` (server-side)
 
@@ -133,35 +158,6 @@ Fires off after a row was clicked. sends through the row
 
 Fires off after a filter was applied to the dataset. Send through the filtered subset.
 
-### Programmatic reload
-
-At times you might want to refresh the data as a reaction to data alteration on the server-side.
-To do so use `v-ref` to grab the component and call the `refresh()` method on it. E.g:
-
-     <div id="people">
-       <v-server-table url="/people" :columns="columns" :options="options" v-ref:table></v-server-table>
-     </div>
-
-Then inside your component call:
-
-     this.$refs.table.refresh();
-
-For further details regarding `refs` please [see vue documentation](https://vuejs.org/guide/components.html#Child-Component-Refs)
-
-### Implementations
-
-  I have included [an Eloquent implementation](https://github.com/matfish2/vue-tables/tree/master/server/PHP) for Laravel Users.
-  If you happen to write other implementations for PHP or other languages, a pull request would be most welcome, under the following guidelines:
-
-  a. Include the class under `./server/{language}`.
-
-  b. Name it according to convention: `{concrete}VueTables`.
-
-  c. if this is the first implementation in this language add an interface similar to the one found in the PHP folder.
-
-  d. Have it implement the interface.
-
-  e. TEST IT.
 
 # Custom Filters
 
