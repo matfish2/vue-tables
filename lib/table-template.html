@@ -107,7 +107,7 @@ v-ref:pagination
 v-if="options.pagination && !options.pagination.dropdown"
 :for="id"
 :records="count"
-:per-page="limit"
+:per-page="parseInt(limit)"
 :chunk="options.pagination.chunk"
 :count-text="options.texts.count">
 </pagination>
