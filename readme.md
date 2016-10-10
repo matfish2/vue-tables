@@ -1,5 +1,7 @@
 # Vue Tables
 
+Note: using strings as templates is deprecated and will be removed in an upcoming release. Please use functions instead.
+
 [![npm version](https://badge.fury.io/js/vue-tables.svg)](https://badge.fury.io/js/vue-tables) [![Build Status](https://travis-ci.org/matfish2/vue-tables.svg?branch=master)](https://travis-ci.org/matfish2/vue-tables)
 
 Users of VueJs 2 please use [this package](https://github.com/matfish2/vue-tables-2) instead.
